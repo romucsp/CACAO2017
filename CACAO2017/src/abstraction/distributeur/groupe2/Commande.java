@@ -1,4 +1,4 @@
-package abstraction.distributeurseurope;
+package abstraction.distributeur.groupe2;
 
 public class Commande {
 	private String Nom;
