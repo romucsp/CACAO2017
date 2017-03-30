@@ -1,4 +1,6 @@
-package transformateur.usa.tresorie;
+package abstraction.transformateur.groupe5.tresorie;
+
+//Souchu Bastien
 
 abstract class FluxFinancier {
 	private String Entreprise; 

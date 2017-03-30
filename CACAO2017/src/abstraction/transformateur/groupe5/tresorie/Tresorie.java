@@ -1,9 +1,10 @@
-package transformateur.usa.tresorie;
+package abstraction.transformateur.groupe5.tresorie;
 
 import java.util.ArrayList;
 import java.util.List;
-
+ //Souchu Bastien
 public class Tresorie {
+	
 	private float CompteCourant=0;
 	private List<Achat> LAchat=new ArrayList<Achat>(); 
 	private List<Vente> LVente=new ArrayList<Vente>();
@@ -24,10 +25,12 @@ public class Tresorie {
 		return LAchat;
 	}
 	
-	public void removeAchat(Achat d){
-		LAchat.remove(d);
+	public void removeAchat(){
+		if (addTresorie(LAchat.get(0).getMontant(),false))
+		LAchat.remove(0);
 	}
 	public void removeVente(Vente c){
+		if(addTresorie(LVente.get(0).getMontant(),true))
 		LVente.remove(c);
 	}
 

@@ -1,4 +1,4 @@
-package transformateur.usa.tresorie;
+package abstraction.transformateur.groupe5.tresorie;
 
 
 public class Achat extends FluxFinancier{

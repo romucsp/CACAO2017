@@ -1,4 +1,4 @@
-package transformateur.usa;
+package abstraction.transformateur.groupe5;
 
 public class StockMatPremiere {
 	
@@ -16,6 +16,10 @@ public class StockMatPremiere {
 		this.Vanille=Vanille;
 		this.Lecithine=Lecithine;
 		this.Epice=Epice;
+	}
+	
+	public StockMatPremiere(){
+		this(0,0,0,0,0,0);
 	}
 	
 	public int getCacao(){
@@ -41,6 +45,7 @@ public class StockMatPremiere {
 	public int getEpice(){
 		return this.Epice;
 	}
+
 	
 	
 }
