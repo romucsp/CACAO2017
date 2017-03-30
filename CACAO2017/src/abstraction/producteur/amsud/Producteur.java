@@ -1,4 +1,4 @@
-package prodfeveAmerique;
+package abstraction.producteur.amsud;
 
 import abstraction.fourni.v0.IProducteur;
 
