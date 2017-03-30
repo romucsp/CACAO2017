@@ -1,4 +1,4 @@
-package abstraction.producteur.amsud;
+package abstraction.producteur.groupe4;
 
 import abstraction.fourni.v0.IProducteur;
 
