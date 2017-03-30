@@ -43,7 +43,7 @@ public class Producteur implements Acteur, IProducteur {
     	Monde.LE_MONDE.ajouterIndicateur( this.solde );
     	Monde.LE_MONDE.ajouterIndicateur( this.pertes );
     }
-
+  
 	public String getNom() {
 		return "Producteur "+this.nom;
 	}
