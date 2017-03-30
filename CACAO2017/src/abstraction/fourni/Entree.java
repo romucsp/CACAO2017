@@ -1,7 +1,7 @@
 package abstraction.fourni;
 
 public class Entree {
-	private Acteur auteur; // l'auteur de la modification
+	private Acteur a; // l'auteur de la modification
 	private double valeur; // la nouvelle valeur
 	private int etape;     // l'etape a laquelle le changement a eu lieu
 
