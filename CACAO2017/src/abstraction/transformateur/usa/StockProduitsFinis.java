@@ -1,4 +1,4 @@
-package abstraction.transformateur.groupe5;
+package abstraction.transformateur.usa;
 
 public class StockProduitsFinis {
 	

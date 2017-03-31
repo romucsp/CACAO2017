@@ -1,6 +1,6 @@
-package abstraction.transformateur.groupe5;
+package abstraction.transformateur.usa;
 
-import abstraction.transformateur.groupe5.tresorie.Tresorie;
+import abstraction.transformateur.usa.tresorie.Tresorie;
 //Souchu
 public class TransformateurUsa {
 	private Tresorie treso;
