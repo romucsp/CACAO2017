@@ -54,7 +54,7 @@ public class StockMatPremiere {
 		this.Lait=Lait;		
 	}
 	
-	public void getSucre(int Sucre){
+	public void setSucre(int Sucre){
 		this.Sucre=Sucre;
 	}
 	
