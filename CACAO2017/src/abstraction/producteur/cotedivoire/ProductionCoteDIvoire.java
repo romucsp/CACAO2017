@@ -1,4 +1,4 @@
-package abstraction.producteur.groupe6;
+package abstraction.producteur.cotedivoire;
 
 // modifié by fcadre
 
