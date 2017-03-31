@@ -8,21 +8,29 @@ import abstraction.fourni.Monde;
 public class Tresorerie {
 	private double ca; //chiffres d'affaires de la periode
 	private double charges; // charges de production
-	private double tresorie; // argent en banque
+	private double tresorerie; // argent en banque
 	private double resultat; // resultat = ca - charges
 	private String nom ;
 	
 	public Tresorerie(Monde monde, String nom){
 		this.nom = nom ;
-		
 		this.ca= ca;
-		this.resultat = this.ca - this.charges ;
 		this.charges = charges ;
-		this.tresorie = tresorie ;	
-		
-		
-
+		this.tresorerie = tresorerie ;	
 	}
+	 public double getCa(){
+		 return this.ca ;
+	 }
+	 public double getCharges(){
+		 return this.charges ;
+	 }
+	 public double getTresorerie(){
+		 return this.tresorerie ;
+	 }
+	 public String getNom(){
+		 return this.nom ;
+	 }
+	 
 	
 	
 }
