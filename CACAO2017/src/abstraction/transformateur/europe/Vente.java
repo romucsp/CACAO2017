@@ -6,4 +6,6 @@ public class Vente {
 	
 	private int numerodevente;
 	private int prix;
+	private String Philippe;
+	
 }
