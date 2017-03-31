@@ -48,7 +48,8 @@ public class Distributeur implements Acteur{
 	}
 
 	
-	public double getPrixMaxi(){
-		
+	public double getPrixMaxi(double stock, double demande){
+		double prix= demande/stock;
+		return prix;
 	}
 }
