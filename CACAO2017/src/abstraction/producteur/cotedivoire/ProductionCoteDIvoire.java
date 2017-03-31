@@ -1,4 +1,4 @@
-package abstraction.producteur.groupe6;
+package abstraction.producteur.cotedivoire;
 
 // modifié by fcadre
 
@@ -14,5 +14,5 @@ public class ProductionCoteDIvoire {
 	}
 	public ProductionCoteDIvoire(){ 
 		this(1500000, 13000000, 1700000); 
-	} 
+	}
 }
