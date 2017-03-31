@@ -8,6 +8,12 @@ public class Distributeur implements Acteur{
 	private double fonds;
 	private double demande;
 	
+	public Distributeur(String nom, double stock, double fonds, double demande){
+		this.nom=nom;
+		this.stock=stock;
+		this.fonds=fonds;
+		this.demande=demande;
+	}
 	
 	public String getNom(){
 		return this.nom;
@@ -41,7 +47,8 @@ public class Distributeur implements Acteur{
 		this.demande = demande;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	
+	public double getPrixMaxi(){
+		
 	}
 }
