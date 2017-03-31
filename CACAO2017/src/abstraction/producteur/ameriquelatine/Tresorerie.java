@@ -30,7 +30,18 @@ public class Tresorerie {
 	 public String getNom(){
 		 return this.nom ;
 	 }
-	 
+	public void setCa( int ca) {
+		this.ca = ca;
+	}
+	public void setCharges(int charges){
+		this.charges = charges ;
+	}
+	public void setTresorerie(int tresorerie){
+		this.tresorerie = tresorerie ;
+	}
+	public void setNom(String nom){
+		this.nom = nom ;
+	}
 	
 	
 }
