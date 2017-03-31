@@ -1,4 +1,4 @@
-package distributeurAmerique;
+package abstraction.distributeurAmerique;
 
 import abstraction.fourni.Acteur;
 
