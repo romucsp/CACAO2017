@@ -45,6 +45,31 @@ public class StockMatPremiere {
 	public int getEpice(){
 		return this.Epice;
 	}
+	
+	public void setCacao(int cacao){
+		this.Cacao=cacao;
+	}
+	
+	public void setLait(int Lait){
+		this.Lait=Lait;		
+	}
+	
+	public void getSucre(int Sucre){
+		this.Sucre=Sucre;
+	}
+	
+	public void setVanille(int Vanille){
+		this.Vanille=Vanille;
+	}
+	
+	public void setLecithine(int Lecithine){
+		this.Lecithine=Lecithine;
+	}
+	
+	public void setEpice(int Epice){
+		this.Epice=Epice;
+	}
+	
 
 	
 	
