@@ -4,5 +4,5 @@ public class Tresorerie {
 	private double ca;
 	private double charges;
 	private double solde;
-	private double variationsolde;
+	private double resultat;
 }
