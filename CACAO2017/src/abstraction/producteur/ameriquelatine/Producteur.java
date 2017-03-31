@@ -1,4 +1,4 @@
-package abstraction.producteur.amsud;
+package abstraction.producteur.ameriquelatine;
 
 import abstraction.fourni.v0.IProducteur;
 
