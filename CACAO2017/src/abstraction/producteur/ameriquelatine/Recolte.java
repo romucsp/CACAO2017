@@ -2,7 +2,7 @@ package abstraction.producteur.ameriquelatine;
 
 public class Recolte {
 	private int surfacecultivable; //Constante : surface cultivable max
-	private int prodmax; // Constante production max
+	private int prodmax; // Constante production max en fonction de la surface cultivable
 	private double indiceRecolte; // Indicateur variant entre 0 et 1 : pourcentage pour fixer nb de fèves totales
 	
 	public Recolte(int qterecoltee, int surfacecultivable, int prodmax, double indiceRecolte){
