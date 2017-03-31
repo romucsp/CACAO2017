@@ -1,4 +1,4 @@
-package abstraction.transformateur.groupe5.tresorie;
+package abstraction.transformateur.usa.tresorie;
 
 import java.util.ArrayList;
 import java.util.List;
