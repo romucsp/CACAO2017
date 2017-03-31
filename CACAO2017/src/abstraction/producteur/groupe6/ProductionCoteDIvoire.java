@@ -14,5 +14,5 @@ public class ProductionCoteDIvoire {
 	}
 	public ProductionCoteDIvoire(){ 
 		this(1500000, 13000000, 1700000); 
-	}
+	} 
 }
