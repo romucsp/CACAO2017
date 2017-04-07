@@ -2,59 +2,51 @@ package abstraction.producteur.cotedivoire;
 
 import abstraction.fourni.Acteur;
 import abstraction.fourni.v0.IProducteur;
+import java.util.ArrayList; 
 
 // modifié by fcadre
 
-public class ProductionCoteDIvoire implements Acteur, IProducteur{
-	private int production; 
-	private int prod_min; 
-	private int prod_max; 
+public class ProductionCoteDIvoire implements Production{
+	private int productionmoyenne; 
+	private ArrayList<Integer>  productions; 
+	private int quantiteProduite; 
+	private int quantiteAchetable; 
 	
-	public ProductionCoteDIvoire(int prod, int prodmin,int prodmax){ 
-		this.production=prod;
-		this.prod_min=prodmin; 
-		this.prod_max=prodmax; 
+	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach){ 
+		this.productionmoyenne=prodmoy;
+		this.productions = prods; 
+		this.quantiteProduite = qtprod; 
+		this.quantiteAchetable = qtach; 
 	}
 	
-	public void setProd(int p){ 
-		this.production=p;
+	public int getProductionmoyenne(){ 
+		return this.productionmoyenne; 
 	}
 	
-	public void setProdMin(int pm){
-		this.prod_min=pm;
+	public ArrayList<Integer> getProductions(){
+		return this.productions; 
 	}
 	
-	public void setProdMax(int pma){
-		this.prod_max=pma;
+	public int getQuantiteProd(){ 
+		return this.getProductions().get(this.productions.size());  
 	}
 	
-	public int getProd(){
-		return this.production;
+	public int getQuantiteAch(){ 
+		return this.getQuantiteProd();
 	}
 	
-	public int getProdMin(){
-		return this.prod_min;
+	public void variationProduction(){
+		double variation = 0.10; 
+		int prod_min = this.getProductionmoyenne() - (int)(this.getProductionmoyenne()*variation); 
+		int prod_max = this.getProductionmoyenne() - (int)(this.getProductionmoyenne()*variation);
+		int prod = prod_min + (int)Math.random()*(prod_max - prod_min); 
+		productions.add(prod); 
 	}
 	
-	public int getProdMax(){
-		return this.prod_max;
-	}
-	
-	public double quantiteMiseEnVente() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	public void notificationVente(double quantite) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
 	public String getNom() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Production Cote d'Ivoire"; 
 	}
-	@Override
+	
 	public void next() {
 		// TODO Auto-generated method stub
 	}
