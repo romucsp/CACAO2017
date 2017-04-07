@@ -49,4 +49,6 @@ public class ProductionCoteDIvoire implements Production{
 	public void next() {
 		// TODO Auto-generated method stub
 	}
+	
 }
+
