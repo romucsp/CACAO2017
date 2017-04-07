@@ -1,75 +1,80 @@
 package abstraction.transformateur.usa;
 
 public class StockMatPremiere {
+	/*modif souhu*/
+	private double Cacao;
+	private double Lait;
+	private double Sucre;
+	private double Beurre;
+	private double Farine;
 	
-	private int Cacao;
-	private int Lait;
-	private int Sucre;
-	private int Vanille;
-	private int Lecithine;
-	private int Epice;
-	
-	public StockMatPremiere (int Cacao,int Lait, int Sucre, int Vanille, int Lecithine,int Epice){
+	public StockMatPremiere (double Cacao,double Lait, double Sucre, double Beurre, double Farine){
 		this.Cacao= Cacao;
 		this.Lait=Lait;
 		this.Sucre=Sucre;
-		this.Vanille=Vanille;
-		this.Lecithine=Lecithine;
-		this.Epice=Epice;
+		this.Beurre=Beurre;
+		this.Farine=Farine;
 	}
 	
 	public StockMatPremiere(){
-		this(0,0,0,0,0,0);
+		this(0,0,0,0,0);
 	}
 	
-	public int getCacao(){
+	public double getCacao(){
 		return this.Cacao;
 	}
 	
-	public int getLait(){
+	public double getLait(){
 		return this.Lait;		
 	}
 	
-	public int getSucre(){
+	public double getSucre(){
 		return this.Sucre;
 	}
 	
-	public int getVanille(){
-		return this.Vanille;
+	public double getBeurre(){
+		return this.Beurre;
 	}
 	
-	public int getLecithine(){
-		return this.Lecithine;
+	public double getFarine(){
+		return this.Farine;
 	}
 	
-	public int getEpice(){
-		return this.Epice;
-	}
-	
-	public void setCacao(int cacao){
+	public void setCacao(double cacao){
 		this.Cacao=cacao;
 	}
 	
-	public void setLait(int Lait){
+	public void setLait(double Lait){
 		this.Lait=Lait;		
 	}
 	
-	public void setSucre(int Sucre){
+	public void setSucre(double Sucre){
 		this.Sucre=Sucre;
 	}
 	
-	public void setVanille(int Vanille){
-		this.Vanille=Vanille;
+	public void setBeurre(double Beurre){
+		this.Beurre=Beurre;
 	}
 	
-	public void setLecithine(int Lecithine){
-		this.Lecithine=Lecithine;
+	public void setFarine(double Farine){
+		this.Farine=Farine;
 	}
 	
-	public void setEpice(int Epice){
-		this.Epice=Epice;
+	public void enleverFarine(double Farine){
+		this.Farine-=Farine;
 	}
-	
+	public void enleverBeurre(double Beurre){
+		this.Beurre-=Beurre;
+	}
+	public void enleverSucre(double Surcre){
+		this.Sucre-=Sucre;;
+	}
+	public void enleverLait(double Lait){
+		this.Lait-=Lait;
+	}
+	public void eneleverCacao(double Cacao){
+		this.Cacao-=Cacao;
+	}
 
 	
 	
