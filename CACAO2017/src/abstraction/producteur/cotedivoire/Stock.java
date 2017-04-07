@@ -35,4 +35,5 @@ public class Stock{
 	public void setStockfinal(ArrayList<Integer> stockfinal) {
 		this.stockfinal = stockfinal;
 	}
+	
 }
