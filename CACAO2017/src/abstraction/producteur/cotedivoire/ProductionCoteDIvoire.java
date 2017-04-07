@@ -57,6 +57,5 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	@Override
 	public void next() {
 		// TODO Auto-generated method stub
-		
 	}
 }
