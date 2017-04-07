@@ -7,11 +7,11 @@ public interface IMarcheProd {
 	
 	public double quantiteAchetable();
 	
-	public double quantiteVoulue(); 
+	public double quantiteVoulue();
 	
-	public void addProducteur(Producteur p); 
+	public void addProducteur(Producteur p);
 	
-	public void addTransformateur(Transformateur t); 
+	public void addTransformateur(Transformateur t);
 	
 	
 }

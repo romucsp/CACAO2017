@@ -18,6 +18,8 @@ public class MarcheProd implements IMarcheProd{
 		this.transformateurs= new ArrayList<Transformateur>();
 		this.quantiteAchetableP1=0.0;
 		this.quantiteAchetableP2=0.0;
+		this.quantiteVoulueT1=0.0;
+		this.quantiteVoulueT2=0.0;
 	}
 	
 	public void addProducteur (Producteur p) {
