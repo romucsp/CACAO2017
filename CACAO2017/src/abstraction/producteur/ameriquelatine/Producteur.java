@@ -2,24 +2,22 @@ package abstraction.producteur.ameriquelatine;
 
 import abstraction.fourni.v0.IProducteur;
 
-public class Producteur implements IProducteur {
+public class Producteur {
 	private String nom;
 	private Stock stock;
+	private int Qtemiseenvente;
 	
-	public Producteur(String nom,Stock stock){
-		this.nom=nom;
-		this.stock=stock;
+	public Producteur(Stock stock){
+		this.nom="Amerique Latine";
+		this.Qtemiseenvente=stock.getProduction();
 	}
 
-	@Override
-	public double quantiteMiseEnVente() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int Qtemiseenvente(){
+		return Qtemiseenvente;
 	}
 
-	@Override
 	public void notificationVente(double quantite) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
