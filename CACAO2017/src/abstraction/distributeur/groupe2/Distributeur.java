@@ -44,11 +44,18 @@ public abstract class Distributeur implements Acteur,IDistributeur{
 	}
 
 	
-	public double getPrixMax(){ // strategie lineaire Walid en fonction du prix du transformateur
+	public double getPrixMax(){
 		double prixTransfo;
 		prixTransfo = vente.getPrix()*vente.getQuantite();
 		double coeff = qteDemandee/stock;
 		double prix = coeff*prixTransfo;
 		return prix;
+	}
+	
+	public void next(Vente vente){
+		this.setVente(vente);
+		double qteDemandee;
+		double stock;
+		
 	}
 }

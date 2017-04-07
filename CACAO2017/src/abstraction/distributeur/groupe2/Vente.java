@@ -26,6 +26,4 @@ public class Vente {
 		this.quantite = quantite;
 	}
 	
-	
-
 }
