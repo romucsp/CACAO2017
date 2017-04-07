@@ -52,7 +52,7 @@ public abstract class Distributeur implements Acteur,IDistributeur{
 		return prix;
 	}
 	
-	public void next(Vente vente){
+	public void notif(Vente vente){
 		this.setVente(vente);
 		double qteDemandee;
 		double stock;

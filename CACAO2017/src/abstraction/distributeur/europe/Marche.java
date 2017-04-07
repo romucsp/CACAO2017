@@ -6,8 +6,8 @@ import abstraction.fourni.Acteur;
 
 /*public class Marche {
 	
-	private ArrayList<Distributeur> distributeur;
-	private ArrayList<Transformateur> transformateur;
+	private ArrayList<IDistributeur> distributeur;
+	private ArrayList<ITransformateur> transformateur;
 	
 	double prixVenteMin=20;
 	double prixVenteMax=40;
@@ -17,7 +17,7 @@ import abstraction.fourni.Acteur;
 	
 	double unite=1000;
 	
-	public Marche(ArrayList<Distributeur> distributeur, ArrayList<Transformateur> transformateur){
+	public Marche(ArrayList<IDistributeur> distributeur, ArrayList<ITransformateur> transformateur){
 		this.distributeur=distributeur;
 		this.transformateur=transformateur;
 	}
@@ -28,12 +28,12 @@ import abstraction.fourni.Acteur;
        // Définition des tests vérifiant si la boucle doit s'arrêter ou non 
 		
 		
-		// On vérifie si les prix sont dans la fourchette autoriséé
+		// On vérifie si les prix sont dans la fourchette autorisée
 		
 		boolean test1= (transformateur.get(1).getPrixMin()>=prixVenteMin) &&	(transformateur.get(1).getPrixMin()<=prixVenteMax);	
 		boolean test2= (transformateur.get(2).getPrixMin()>=prixVenteMin) &&	(transformateur.get(2).getPrixMin()<=prixVenteMax);
 		
-		boolean test3= (distributeur.get(1).getPrixMax()>=prixAchatMin) &&  (distributeur.get(1).getPrixMax()<=prixAchatMaxn);
+		boolean test3= (distributeur.get(1).getPrixMax()>=prixAchatMin) &&  (distributeur.get(1).getPrixMax()<=prixAchatMax);
 		boolean test4= (distributeur.get(2).getPrixMax()>=prixAchatMin) &&  (distributeur.get(2).getPrixMax()<=prixAchatMax);
 		
 		// On vérifie qu'une transaction soit possible
@@ -74,10 +74,10 @@ import abstraction.fourni.Acteur;
 			
 	
 			
-			distributeur.get(prioDistri).next(new Vente(prix, unite));
-			distributeur.get(autreDistri).next(new Vente(prix, 0));
-			transformateur.get(prioTransfo).next(new Vente(prix, unite));
-			transformateur.get(autreTransfo).next(new Vente(prix, 0));
+			distributeur.get(prioDistri).notif(new Vente(prix, unite));
+			distributeur.get(autreDistri).notif(new Vente(prix, 0));
+			transformateur.get(prioTransfo).notif(new Vente(prix, unite));
+			transformateur.get(autreTransfo).notif(new Vente(prix, 0));
 			
 			
 		}
