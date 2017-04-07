@@ -38,12 +38,6 @@ public class TransformateurUsa implements transformateur{
 			return bornesmin;
 		}
 	}
-
-	public void notif(double prix, int quantité) {
-		this.finis.enleverChoco(quantité);
-		this.tresorie.setCompteCourant(prix*quantité+this.tresorie.getCompteCourant());
-	}
-
 	@Override
 	public void notif(double prix, double quantité) {
 		this.finis.enleverChoco(quantité);
