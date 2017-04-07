@@ -3,6 +3,8 @@ import abstraction.fourni.v0.*;
 
 public interface IMarcheProd {
 	
+	/// modifié par War20 et Lolottisyoung
+	
 	public double quantiteAchetable();
 	
 	public double quantiteVoulue(); 
