@@ -12,11 +12,12 @@ public class Tresorerie {
 	private double resultat; // resultat = ca - charges
 	private String nom ;
 	
-	public Tresorerie(Monde monde, String nom){
+	public Tresorerie(Monde monde, String nom, double charges, double tresorerie, double ca){
 		this.nom = nom ;
 		this.ca= ca;
 		this.charges = charges ;
 		this.tresorerie = tresorerie ;	
+		this.resultat=ca-charges;
 	}
 	 public double getCa(){
 		 return this.ca ;
