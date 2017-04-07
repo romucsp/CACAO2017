@@ -1,4 +1,4 @@
-package abstraction.distributeur.groupe2;
+package abstraction.distributeur.europe;
 
 public interface IDistributeur {
 	public double getPrixMax();

@@ -1,4 +1,4 @@
-package abstraction.distributeur.groupe2;
+package abstraction.distributeur.europe;
 import abstraction.fourni.v0.*;
 import abstraction.fourni.*;
 public abstract class Distributeur implements Acteur,IDistributeur{
