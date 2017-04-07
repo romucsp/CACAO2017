@@ -1,8 +1,8 @@
 package abstraction.transformateur.usa.tresorie;
 
 public class AchatCacao {
-	private int qtesouhaite;
-	private int budget;
+	private double qtesouhaite;
+	private double budget;
 	private int datecommande; 
 	
 	
@@ -13,15 +13,28 @@ public class AchatCacao {
 		this.datecommande=d;
 	}
 	
-	public int getqtesouhaite(){
+	public double getqtesouhaite(){
 		return this.qtesouhaite;
 	}
-	public int getbudget(){
+	public double getbudget(){
 		return budget;
 	}
 	public int getdateco(){
 		return this.datecommande;
 	}
+	
+	public void setqte(double q){
+		this.qtesouhaite = q;
+	}
+	
+	public void setbudget(double b){
+		this.budget = b;
+	}
+	
+	public void setdate(int d){
+		this.datecommande=d;
+	}
+	
 	
 
 }
