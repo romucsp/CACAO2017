@@ -1,4 +1,4 @@
-package abstraction.distributeurAmerique;
+package abstraction.distributeur.amerique;
 
 import abstraction.fourni.Acteur;
 
@@ -51,6 +51,9 @@ public class Distributeur implements Acteur{
 	public double getPrixMaxi(double stock, double demande){
 		double aacheter=this.getDemande()-this.getStock();
 		double prixmaxmax=this.getFonds()/aacheter;
+		
+		
+		return prixmaxmax;
 		
 	}
 }
