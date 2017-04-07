@@ -74,6 +74,10 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		Bourse();
 		Map<IProducteur, Integer> m = new HashMap<IProducteur,Integer>();
 		//On creer une table de hashage qui correspond a un tableau IProd/ quantite 
+		
+		//faire plutot avec un if sur le nombre de producteur ??
+		// à quoi set la liste des producteurs du coup ?
+		
 		m.put(this.producteurs.get(0), (int)this.producteurs.get(0).quantiteMiseEnVente());
 		// si on réecrit la meme ligne juste en changeant la valeur du integer ca modifie juste sa valeur donc 
 		// c'est un moyen de garder en mémoire la valeur pour chaque prod 
