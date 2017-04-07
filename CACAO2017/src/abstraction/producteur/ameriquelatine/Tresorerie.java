@@ -44,5 +44,8 @@ public class Tresorerie {
 		this.nom = nom ;
 	}
 	
+	public void next(){
+//		this.ca = 		
+	}
 	
 }
