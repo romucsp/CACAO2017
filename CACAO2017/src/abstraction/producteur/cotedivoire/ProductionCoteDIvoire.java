@@ -46,7 +46,6 @@ public class ProductionCoteDIvoire implements Production{
 	public String getNom() {
 		return "Production Cote d'Ivoire"; 
 	}
-	
 	public void next() {
 		// TODO Auto-generated method stub
 	}
