@@ -2,17 +2,18 @@ package abstraction.producteur.ameriquelatine;
 
 public class Recolte {
 	private int surfacecultivable; //Constante : surface cultivable max
-	private int prodmax; // Constante production max en fonction de la surface cultivable
 	private double indiceRecolte; // Indicateur variant entre 0 et 1 : pourcentage pour fixer nb de fèves totales
+	private int Qterecoltee;
 	
-	public Recolte(int qterecoltee, int surfacecultivable, int prodmax, double indiceRecolte){
+	public Recolte(int qterecoltee, int surfacecultivable, double indiceRecolte){
 		this.surfacecultivable=surfacecultivable;
-		this.prodmax=prodmax;
 		this.indiceRecolte=indiceRecolte;
+		Qterecoltee=(int)(surfacecultivable*indiceRecolte);
 	}
 
-	public int Qterecoltee() {
-		return (int)(prodmax*indiceRecolte);
+	public int getQterecoltee() {
+		return this.Qterecoltee;
+
 	}
 
 	public int getSurfacecultivable() {
@@ -21,14 +22,6 @@ public class Recolte {
 
 	public void setSurfacecultivable(int surfacecultivable) {
 		this.surfacecultivable = surfacecultivable;
-	}
-
-	public int getProdmax() {
-		return prodmax;
-	}
-
-	public void setProdmax(int prodmax) {
-		this.prodmax = prodmax;
 	}
 
 	public double getIndiceRecolte() {
