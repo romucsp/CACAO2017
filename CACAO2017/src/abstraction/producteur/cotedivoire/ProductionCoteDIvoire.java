@@ -16,27 +16,27 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 		this.prod_max=prodmax; 
 	}
 	
-	public void SetProd(int p){ 
+	public void setProd(int p){ 
 		this.production=p;
 	}
 	
-	public void SetProdMin(int pm){
+	public void setProdMin(int pm){
 		this.prod_min=pm;
 	}
 	
-	public void SetProdMax(int pma){
+	public void setProdMax(int pma){
 		this.prod_max=pma;
 	}
 	
-	public int GetProd(){
+	public int getProd(){
 		return this.production;
 	}
 	
-	public int GetProdMin(){
+	public int getProdMin(){
 		return this.prod_min;
 	}
 	
-	public int GetProdMax(){
+	public int getProdMax(){
 		return this.prod_max;
 	}
 	
