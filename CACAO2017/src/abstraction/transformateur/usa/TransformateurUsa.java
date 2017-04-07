@@ -46,7 +46,8 @@ public class TransformateurUsa implements transformateur{
 
 	@Override
 	public void notif(double prix, double quantité) {
-		// TODO Auto-generated method stub
+		this.finis.enleverChoco(quantité);
+		this.tresorie.setCompteCourant(this.tresorie.getCompteCourant()+quantité*prix);
 		
 	}
 	
