@@ -1,4 +1,5 @@
 package abstraction.transformateur.usa;
+<<<<<<< HEAD
 
 import abstraction.transformateur.usa.tresorie.*;
 //*Medhi puis Arthur
@@ -10,6 +11,15 @@ public class TransfoChocolat {
 	
 	public void ProdChocolat(int quantitévoulue){
 		if 
+=======
+public class TransfoChocolat {
+	
+	private StockMatPremiere stock;
+	
+	
+	public TransfoChocolat( StockMatPremiere s){
+		this.stock = s;
+>>>>>>> origin/master
 		
 	}
 	
@@ -18,10 +28,13 @@ public class TransfoChocolat {
 		return stock;
 	}
 	
+<<<<<<< HEAD
 	public AchatCacao getAchatcacao(){
 		return cacao;
 	}
 	
+=======
+>>>>>>> origin/master
 	
 	public int getProduction(){
 		int p = 0;
