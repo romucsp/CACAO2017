@@ -4,6 +4,7 @@ import abstraction.interfacemarche.*;
 public class TransformateurUsa implements transformateur{
 	private StockProduitsFinis finis = new StockProduitsFinis(0);
 	private StockMatPremiere premiere;
+	private Tresorie tresorie=new Tresorie();
 	private int unitéventechocolat=100;
 	private double bornesmax=8;
 	private double bornesmin=4;
@@ -44,6 +45,12 @@ public class TransformateurUsa implements transformateur{
 		else{
 			return bornesmin;
 		}
+	}
+
+	@Override
+	public void notif(double prix, int quantité) {
+		this.finis.enleverChoco(quantité);
+		this.tresorie.setCompteCourant(prix*quantité+this.tresorie.getCompteCourant());
 	}
 	
 }
