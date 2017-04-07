@@ -6,8 +6,8 @@ import abstraction.fourni.Acteur;
 
 public class Marche {
 	
-	private ArrayList<Acteur> distributeur;
-	private ArrayList<Acteur> transformateur;
+	private ArrayList<Distributeur> distributeur;
+	private ArrayList<Transformateur> transformateur;
 	
 	double prixVenteMin=20;
 	double prixVenteMax=40;
@@ -17,7 +17,7 @@ public class Marche {
 	
 	double unite=1000;
 	
-	public Marche(ArrayList<Acteur> distributeur, ArrayList<Acteur> transformateur){
+	public Marche(ArrayList<Distributeur> distributeur, ArrayList<Transformateur> transformateur){
 		this.distributeur=distributeur;
 		this.transformateur=transformateur;
 	}
@@ -39,6 +39,7 @@ public class Marche {
 		// On vérifie qu'une transaction soit possible
 		
 		 boolean testPrix= Math.max(distributeur.get(1).getPrixMax(), distributeur.get(2).getPrixMax()) >= Math.max(transformateur.get(1).getPrixMin(), transformateur.get(2).getPrixMin());
+		 
 		 
 		
 		while (test1 && test2 && test3 && test4 && testPrix){
@@ -66,9 +67,16 @@ public class Marche {
 			
 			// Envoi de la notification de vente
 			
-			distributeur.get(prioDistri).send(new Vente(prix, unite));
+			// distributeur.get(prioDistri).send(new Vente(prix, unite));
 			
-			transformateur.get(prioTransfo).send(new Vente(prix, unite));
+			// transformateur.get(prioTransfo).send(new Vente(prix, unite));
+			
+			// Actualisation des prix d'achat et de vente
+			
+			distributeur(1).next(new Vente(prix, unite));
+			distributeur(2).next(new Vente(prix, unite));
+			transformateur(1).next(new Vente(prix, unite));
+			transformateur(2).next(new Vente(prix, unite));
 			
 			
 		}

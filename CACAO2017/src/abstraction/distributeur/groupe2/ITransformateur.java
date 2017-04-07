@@ -1,5 +1,5 @@
 package abstraction.distributeur.groupe2;
 
-public interface ITransformateur1 {
+public interface ITransformateur {
 	int getPrixMin();
 }
