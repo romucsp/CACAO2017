@@ -1,5 +1,7 @@
 package abstraction.distributeur.europe;
 
 public interface ITransformateur {
-	int getPrixMin();
+	public int getPrixMin();
+	
+	public void notif(Vente vente);
 }
