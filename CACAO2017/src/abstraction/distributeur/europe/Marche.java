@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import abstraction.fourni.Acteur;
 
-public class Marche {
+/*public class Marche {
 	
 	private ArrayList<Distributeur> distributeur;
 	private ArrayList<Transformateur> transformateur;
@@ -65,14 +65,6 @@ public class Marche {
 			
 			double prix = (distributeur.get(prioDistri).getPrixMax()+transformateur.get(i).getPrixMin())/2;
 			
-			// Envoi de la notification de vente
-			
-			// distributeur.get(prioDistri).send(new Vente(prix, unite));
-			
-			// transformateur.get(prioTransfo).send(new Vente(prix, unite));
-			
-			// identification des distri et transfo ne faisant rien
-			
 			int autreDistri=Math.abs(prioDistri-1);
 			int autreTransfo=Math.abs(prioTransfo-1);
 			
@@ -92,6 +84,6 @@ public class Marche {
 		
 	}
 	
-	
+}	
+*/
 
-}
