@@ -1,6 +1,12 @@
 package abstraction.transformateur.usa;
 //Souchu
 public class TransformateurUsa {
+	private StockProduitsFinis finis = new StockProduitsFinis(0);
+	private StockMatPremiere premiere;
+	private int unitéventechocolat=100;
+	private double bornesmax=8;
+	private double bornesmin=4;
+	
 	public void next(){
 		achatmatpremiere();
 		produirechocolat();
@@ -27,7 +33,16 @@ public class TransformateurUsa {
 	}
 	
 	public double getprixMin(){
-		return 0.0;
+		if (finis.getStockChocolat()<1*unitéventechocolat){
+			return 10000;
+		}
+		else if (finis.getStockChocolat()<200*unitéventechocolat){
+			double prix= bornesmax-((finis.getStockChocolat()-10*unitéventechocolat)/(190*unitéventechocolat)*(bornesmin-bornesmax));
+			return prix;
+		}
+		else{
+			return bornesmin;
+		}
 	}
 	
 }
