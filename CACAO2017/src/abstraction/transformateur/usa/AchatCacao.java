@@ -1,5 +1,7 @@
 package abstraction.transformateur.usa.tresorie;
 
+import abstraction.transformateur.usa.*;
+
 public class AchatCacao {
 	private double qtesouhaite;
 	private double budget;
@@ -7,8 +9,8 @@ public class AchatCacao {
 	
 	
 	
-	public AchatCacao(int q, int b, int d){
-		this.qtesouhaite=q;
+	public AchatCacao(int b, int d){
+		this.qtesouhaite=50000000 - StockMatPremiere. ;
 		this.budget=b;
 		this.datecommande=d;
 	}
