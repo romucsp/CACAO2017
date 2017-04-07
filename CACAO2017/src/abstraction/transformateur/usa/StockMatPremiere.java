@@ -5,19 +5,17 @@ public class StockMatPremiere {
 	private double Cacao;
 	private double Lait;
 	private double Sucre;
-	private double Beurre;
-	private double Farine;
+	private double Lecitine;
 	
-	public StockMatPremiere (double Cacao,double Lait, double Sucre, double Beurre, double Farine){
+	public StockMatPremiere (double Cacao,double Lait, double Sucre, double Lecitine){
 		this.Cacao= Cacao;
 		this.Lait=Lait;
 		this.Sucre=Sucre;
-		this.Beurre=Beurre;
-		this.Farine=Farine;
+		this.Lecitine=Lecitine;
 	}
 	
 	public StockMatPremiere(){
-		this(0,0,0,0,0);
+		this(0,0,0,0);
 	}
 	
 	public double getCacao(){
@@ -32,13 +30,10 @@ public class StockMatPremiere {
 		return this.Sucre;
 	}
 	
-	public double getBeurre(){
-		return this.Beurre;
+	public double getLecitine(){
+		return this.Lecitine;
 	}
-	
-	public double getFarine(){
-		return this.Farine;
-	}
+
 	
 	public void setCacao(double cacao){
 		this.Cacao=cacao;
@@ -52,19 +47,12 @@ public class StockMatPremiere {
 		this.Sucre=Sucre;
 	}
 	
-	public void setBeurre(double Beurre){
-		this.Beurre=Beurre;
+	public void setLecitine(double Lecitine){
+		this.Lecitine=Lecitine;
 	}
-	
-	public void setFarine(double Farine){
-		this.Farine=Farine;
-	}
-	
-	public void enleverFarine(double Farine){
-		this.Farine-=Farine;
-	}
-	public void enleverBeurre(double Beurre){
-		this.Beurre-=Beurre;
+
+	public void enleverLecitine(double Lecitine){
+		this.Lecitine-=Lecitine;
 	}
 	public void enleverSucre(double Surcre){
 		this.Sucre-=Sucre;;
