@@ -42,7 +42,7 @@ public class Marche {
 		 
 		 
 		
-		while (test1 && test2 && test3 && test4 && testPrix){
+		while ((test1 || test2 || test3 || test4) && testPrix){
 			
 			
 			// Initialisation des deux variables définissant l'indice du distributeur et transformateur prioritaires
