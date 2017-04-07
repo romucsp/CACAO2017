@@ -14,15 +14,7 @@ public class TransformateurUsa implements transformateur{
 		produirechocolat();
 	}
 	
-	public void Onlivreduchocolat(){
-		
-	}
-	
 	public void Onestlivréenmatièrepremière(){
-		
-	}
-	
-	public void recoitcommandedistributeur(){
 		
 	}
 	
@@ -47,7 +39,6 @@ public class TransformateurUsa implements transformateur{
 		}
 	}
 
-	@Override
 	public void notif(double prix, int quantité) {
 		this.finis.enleverChoco(quantité);
 		this.tresorie.setCompteCourant(prix*quantité+this.tresorie.getCompteCourant());
