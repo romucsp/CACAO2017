@@ -9,6 +9,7 @@ import abstraction.fourni.v0.ITransformateur;
 import abstraction.fourni.v0.Producteur;
 import abstraction.fourni.v0.Transformateur;
 
+public class MarcheProd implements Acteur{ // Kevin et Adrien.
 	
 	private ArrayList<IProducteur> producteurs; //liste desproducteur
 	private ArrayList<ITransformateur> transformateurs ; // liste des transformateurs
