@@ -71,12 +71,21 @@ public class Marche {
 			
 			// transformateur.get(prioTransfo).send(new Vente(prix, unite));
 			
+			// identification des distri et transfo ne faisant rien
+			
+			int autreDistri=Math.abs(prioDistri-1);
+			int autreTransfo=Math.abs(prioTransfo-1);
+			
+			
 			// Actualisation des prix d'achat et de vente
 			
-			distributeur(1).next(new Vente(prix, unite));
-			distributeur(2).next(new Vente(prix, unite));
-			transformateur(1).next(new Vente(prix, unite));
-			transformateur(2).next(new Vente(prix, unite));
+			
+	
+			
+			distributeur.get(prioDistri).next(new Vente(prix, unite));
+			distributeur.get(autreDistri).next(new Vente(prix, 0));
+			transformateur.get(prioTransfo).next(new Vente(prix, unite));
+			transformateur.get(autreTransfo).next(new Vente(prix, 0));
 			
 			
 		}
