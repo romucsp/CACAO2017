@@ -11,6 +11,7 @@ public class Tresorerie {
 	private double tresorerie; // argent en banque
 	private double resultat; // resultat = ca - charges
 	private String nom ;
+	private double coursActuel; // prix $ par tonne du cacao de la periode
 	
 	public Tresorerie(Monde monde, String nom, double charges, double tresorerie, double ca){
 		this.nom = nom ;
@@ -42,6 +43,9 @@ public class Tresorerie {
 	}
 	public void setNom(String nom){
 		this.nom = nom ;
+	}
+	public void setCoursActuel(double coursActuel){
+		this.coursActuel=coursActuel;
 	}
 	
 	public void next(){
