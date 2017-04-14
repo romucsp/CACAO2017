@@ -15,6 +15,8 @@ public class TransformateurUsa implements transformateur,Acteur{
 	private double bornesmin=4000;
 	private ArrayList<Integer> prixmatprem = new ArrayList<Integer>();
 	
+	
+	
 	public TransformateurUsa(){
 		prixmatprem.add(350);//Prix matière première à la tonne en euros.
 		prixmatprem.add(25);
