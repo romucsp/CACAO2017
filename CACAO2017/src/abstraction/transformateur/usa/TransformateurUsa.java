@@ -1,5 +1,5 @@
 package abstraction.transformateur.usa;
-import abstraction.interfacemarche.*;
+import abstraction.transformateur.usa.interfacemarche.*;
 //Souchu
 public class TransformateurUsa implements transformateur{
 	private StockProduitsFinis finis = new StockProduitsFinis(0);

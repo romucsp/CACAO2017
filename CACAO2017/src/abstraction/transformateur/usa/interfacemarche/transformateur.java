@@ -1,4 +1,4 @@
-package abstraction.interfacemarche;
+package abstraction.transformateur.usa.interfacemarche;
 
 public interface transformateur {
 	
