@@ -38,7 +38,6 @@ public class TransformateurUsa implements transformateur{
 			return bornesmin;
 		}
 	}
-	@Override
 	public void notif(double prix, double quantité) {
 		this.finis.enleverChoco(quantité);
 		this.tresorie.setCompteCourant(this.tresorie.getCompteCourant()+quantité*prix);
