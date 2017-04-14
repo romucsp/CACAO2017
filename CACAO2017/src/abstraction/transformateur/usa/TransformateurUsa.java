@@ -3,6 +3,7 @@ import abstraction.transformateur.usa.interfacemarche.*;
 import abstraction.producteur.cotedivoire.*;
 //Souchu
 public class TransformateurUsa implements transformateur{
+	
 	private StockProduitsFinis finis = new StockProduitsFinis(0);
 	private StockMatPremiere premiere;
 	private Tresorie tresorie=new Tresorie();
