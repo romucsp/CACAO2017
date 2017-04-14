@@ -1,4 +1,5 @@
-package abstraction.distributeur.europe;
+// Classe codée par Julien : CODE INUTILE
+/*package abstraction.distributeur.europe;
 import abstraction.fourni.v0.*; 
 
 public class Commande{
@@ -34,3 +35,4 @@ public class Commande{
 	
 	
 }
+*/

@@ -1,3 +1,5 @@
+/*Classe codée par Julien/Walid 
+ */
 package abstraction.distributeur.europe;
 import abstraction.fourni.v0.*;
 import abstraction.fourni.*;
@@ -54,8 +56,6 @@ public abstract class Distributeur implements Acteur,IDistributeur{
 	
 	public void notif(Vente vente){
 		this.setVente(vente);
-		double qteDemandee;
-		double stock;
-		
+		this.setStock(this.getStock()-vente.getQuantite());
 	}
 }
