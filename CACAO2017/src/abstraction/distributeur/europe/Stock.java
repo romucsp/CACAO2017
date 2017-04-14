@@ -24,8 +24,16 @@ public class Stock {
 		this.stock = stock;
 	}
 	
-	public void addElement(Chocolats Choco){
-		this.getStock().add(Choco);
+	public void addElement(Chocolats Choco, int nombre_de_choco){
+		for (int i=0; i<nombre_de_choco; i++){
+			this.getStock().add(Choco);
+		}
+	}
+	
+	public void deleteElement(Chocolats Choco, int nombre_de_choco){
+		for (int i=0; i<nombre_de_choco; i++){
+			this.getStock().remove(Choco);
+		}
 	}
 	
 }
