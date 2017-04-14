@@ -3,6 +3,7 @@ package abstraction.producteur.ameriquelatine;
 	// 07/04/2017 modifié par lolotteisyoung
 	// 14/04/17 modifié par lolotteisyoung et AnaisBel
 public class Stock {
+	
 // tout ce qui est produit est stocké, on gère les ventes à partir des stocks.
 	private int initial; //stock initial
 	private double qtevendue; // quantité qui a effectivement été vendue à cette période
