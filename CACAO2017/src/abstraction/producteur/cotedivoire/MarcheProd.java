@@ -53,9 +53,6 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		return "Marché du cacao";
 	}
 	public void Bourse () {
-		setQuantiteAchetableGlob(0.0);
-		setQuantiteVoulueGlob(0.0);
-		
 		// La bourse va faire évoluer le coursActuel en fonction de l'offre et de la demande bornée entre coursMin et coursMax
 		if (this.quantiteAchetableGlob>=this.quantiteVoulueGlob){
 				if (this.coursActuel>this.coursMin){
@@ -69,9 +66,6 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		}
 	}
 	public void next() {
-		
-		// addProducteur(....)
-		// addTransformateur(...)
 		Bourse();
 		Map<IProducteur, Integer> Prod = new HashMap<IProducteur,Integer>();
 		Map<ITransformateur, Integer> Trans = new HashMap<ITransformateur, Integer>();
@@ -100,12 +94,16 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 				//t.notificationAchat(Trans.get(t),this.getCoursActuel());
 			}
 			for (IProducteur p : Prod.keySet()){
-				//p.notificationVente(Prod.get(p),this.getCoursActuel());
+				//p.notificationVente(Prod.get(p)-this.quantiteVoulueGlob,this.getCoursActuel());
 			}
 		}
 		else {
-			for (int i=0; i<this.transformateurs.size(); i++) {
-				
+			// a gérer avec les pourcentages
+			for (ITransformateur t : Trans.keySet()){
+				//t.notificationAchat(12,this.getCoursActuel());
+			}
+			for (IProducteur p : Prod.keySet()){
+				//p.notificationVente(Prod.get(p),this.getCoursActuel());
 			}
 		}
 		
