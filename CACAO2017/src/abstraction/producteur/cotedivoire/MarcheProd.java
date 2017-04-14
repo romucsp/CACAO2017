@@ -85,11 +85,30 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		}
 		// si on réecrit la meme ligne juste en changeant la valeur du integer ca modifie juste sa valeur donc 
 		// c'est un moyen de garder en mémoire la valeur pour chaque prod et transformateur
-		int qttTotale=0;
+		int qttEnVente=0;
 		for (IProducteur p : Prod.keySet()){
-			qttTotale += Prod.get(p);
+			qttEnVente += Prod.get(p);
 		}
-		// Il faut faire de meme avec les transformateurs. 
+		this.quantiteAchetableGlob=qttEnVente;
+		int qttSouhaitee=0; 
+		for (ITransformateur t : Trans.keySet()){
+			qttSouhaitee+= Trans.get(t);
+		}
+		this.quantiteVoulueGlob=qttSouhaitee;
+		if (qttEnVente>=qttSouhaitee) {
+			for (ITransformateur t : Trans.keySet()){
+				//t.notificationAchat(Trans.get(t),this.getCoursActuel());
+			}
+			for (IProducteur p : Prod.keySet()){
+				//p.notificationVente(Prod.get(p),this.getCoursActuel());
+			}
+		}
+		else {
+			for (int i=0; i<this.transformateurs.size(); i++) {
+				
+			}
+		}
+		
 		
 		
 	}
