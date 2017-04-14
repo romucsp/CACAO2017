@@ -4,12 +4,12 @@ package abstraction.distributeur.europe;
 import abstraction.fourni.v0.*;
 import abstraction.fourni.*;
 public abstract class Distributeur implements Acteur,IDistributeur{
-	private Vente vente;
+	private Vente derniereVente; // derniere vente effectuee sur le marche
 	private double stock;
 	private double qteDemandee;
 	
 	public Distributeur(Vente vente, double stock, double qteDemandee){
-		this.vente = vente;
+		this.derniereVente = vente;
 		this.stock = stock;
 		this.qteDemandee = qteDemandee;
 	}
@@ -35,20 +35,20 @@ public abstract class Distributeur implements Acteur,IDistributeur{
 	}
 
 
-	public Vente getVente() {
-		return vente;
+	public Vente getDerniereVente() {
+		return derniereVente;
 	}
 
 
 
 	public void setVente(Vente vente) {
-		this.vente = vente;
+		this.derniereVente = vente;
 	}
 
 	
 	public double getPrixMax(){
 		double prixTransfo;
-		prixTransfo = vente.getPrix()*vente.getQuantite();
+		prixTransfo = derniereVente.getPrix()*derniereVente.getQuantite();
 		double coeff = qteDemandee/stock;
 		double prix = coeff*prixTransfo;
 		return prix;
