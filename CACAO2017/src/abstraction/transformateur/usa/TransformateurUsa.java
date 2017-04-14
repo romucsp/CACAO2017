@@ -83,6 +83,10 @@ public class TransformateurUsa implements transformateur,Acteur{
 		
 	}
 	
+	public int hashCode() {
+		return this.getNom().hashCode();
+	}
+	
 	
 	
 	

@@ -10,3 +10,4 @@ public interface transformateur {
 	public void notificationAchat(double vendu, double prix);
 
 }
+
