@@ -21,7 +21,7 @@ public class Tresorerie {
 		this.charges = charges ;
 		this.tresorerie = tresorerie ;	
 		this.resultat=ca-charges;
-		this.qtevendue = producteur.getqtevendue();
+		this.qtevendue = producteur.quantiteMiseEnvente();
 	}
 	
 	 public double getCa(){

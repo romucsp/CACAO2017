@@ -29,18 +29,14 @@ public class Producteur implements IProducteur {
 		this.coursActuel=coursActuel;
 	}
 
-	@Override
-	//public double quantiteMiseEnVente() {
-		//return stock.getVente();
-	//}
-
 	public void notificationVente(double quantite, double coursActuel) {
 		this.setQtevendue(quantite);
 		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
 			
 	}
+	
 	@Override
-	public double quantiteMiseEnVente() {
+	public double quantiteMiseEnvente() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
