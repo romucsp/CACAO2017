@@ -45,4 +45,10 @@ public class TransformateurUsa implements transformateur{
 		
 	}
 	
+	public double QteSouhaite(){
+		double q= 10000000;
+		return q-this.premiere.getCacao();
+		
+	}
+	
 }
