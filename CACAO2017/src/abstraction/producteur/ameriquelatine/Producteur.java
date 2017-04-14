@@ -32,7 +32,7 @@ public class Producteur implements IProducteur {
 	public void setQtevendue(double qte){
 		this.qtevendue=qte;
 	}
-	public double getQtevendue(){
+	public double getQteVendue(){
 		return this.qtevendue;
 	}
 	
