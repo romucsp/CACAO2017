@@ -5,13 +5,16 @@ package abstraction.producteur.ameriquelatine;
 public class Producteur implements IProducteur {
 	private String nom;
 	private Stock stock;
-	//private int qtemiseenvente;
-	private double qtevendue;
+	private int qtemiseenvente;
 	private double coursActuel;
+	private double qtevendue;
 	
 	public Producteur(Stock stock){
 		this.nom="Amerique Latine";
+		this.qtemiseenvente=12;
 		
+	
+
 	}
 	public String getNom(){
 		return this.nom ;
@@ -22,17 +25,13 @@ public class Producteur implements IProducteur {
 	}
 
 
-	public void setQtevendue(double quantite){
-		this.qtevendue=quantite;
-	}
 	public void setCoursActuel(double coursActuel){
 		this.coursActuel=coursActuel;
 	}
-
-	@Override
-	//public double quantiteMiseEnVente() {
-		//return stock.getVente();
-	//}
+	public void setQtevendue(double qte){
+		this.qtevendue=qte;
+	}
+	
 
 	public void notificationVente(double quantite, double coursActuel) {
 		this.setQtevendue(quantite);
@@ -40,10 +39,11 @@ public class Producteur implements IProducteur {
 			
 	}
 	@Override
-	public double quantiteMiseEnVente() {
+	public double quantiteMiseEnvente() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	
 
 }
