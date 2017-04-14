@@ -59,15 +59,19 @@ public class TransfoChocolat {
 		premiere.setSucre(stocks[2]);
 		premiere.setLecitine(stocks[3]);		
 	}
-	public static void main(String[] args) {
+	
+	public static void test(){
 		StockMatPremiere premiere= new StockMatPremiere(1000,1000,1000,1000);
-		StockProduitsFinis finis = new StockProduitsFinis(5);
+		StockProduitsFinis finis = new StockProduitsFinis(0);
 		TransfoChocolat transfo =new TransfoChocolat(premiere,finis);
 		System.out.println(premiere.getCacao());
 		System.out.println(finis.getStockChocolat());
-		transfo.produireChoco(1700);
+		transfo.produireChoco(1700); //Changer les valeurs de chocolat produit pour tester le bon fonctionnement du script
 		System.out.println(premiere.getCacao());
 		System.out.println(finis.getStockChocolat());
+	}
+	public static void main(String[] args) {
+		//test();
 	}
 	
 	
