@@ -12,11 +12,14 @@ public class ProductionCoteDIvoire implements Production{
 	private int quantiteProduite; 
 	private int quantiteAchetable; 
 	
+	public int hashCode() {
+		return this.getNom().hashCode();
+	}
 	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach){ 
 		this.productionmoyenne=prodmoy;
 		this.productions = prods; 
 		this.quantiteProduite = qtprod; 
-		this.quantiteAchetable = qtach; 
+		this.quantiteAchetable = qtach;
 	}
 	
 	public int getProductionmoyenne(){ 

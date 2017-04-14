@@ -70,21 +70,24 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 	}
 	public void next() {
 		
-		
+		// addProducteur(....)
+		// addTransformateur(...)
 		Bourse();
-		Map<IProducteur, Integer> m = new HashMap<IProducteur,Integer>();
+		Map<IProducteur, Integer> Prod = new HashMap<IProducteur,Integer>();
+		Map<ITransformateur, Integer> Trans = new HashMap<ITransformateur, Integer>();
 		//On creer une table de hashage qui correspond a un tableau IProd/ quantite 
 		
-		//faire plutot avec un if sur le nombre de producteur ??
-		// à quoi set la liste des producteurs du coup ?
-		
-		m.put(this.producteurs.get(0), (int)this.producteurs.get(0).quantiteMiseEnVente());
+		for (int i=0 ; i<this.producteurs.size(); i++) {
+			Prod.put(this.producteurs.get(i), (int)this.producteurs.get(i).quantiteMiseEnVente());
+		}
+		for (int i=0 ; i<this.transformateurs.size(); i++) {
+			Trans.put(this.transformateurs.get(i), (int)this.transformateurs.get(i).quantiteSouhaitee());
+		}
 		// si on réecrit la meme ligne juste en changeant la valeur du integer ca modifie juste sa valeur donc 
-		// c'est un moyen de garder en mémoire la valeur pour chaque prod 
-		m.put(this.producteurs.get(1), (int)this.producteurs.get(0).quantiteMiseEnVente());
+		// c'est un moyen de garder en mémoire la valeur pour chaque prod et transformateur
 		int qttTotale=0;
-		for (IProducteur p : m.keySet()){
-			qttTotale += m.get(p);
+		for (IProducteur p : Prod.keySet()){
+			qttTotale += Prod.get(p);
 		}
 		// Il faut faire de meme avec les transformateurs. 
 		
