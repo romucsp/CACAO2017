@@ -32,6 +32,9 @@ public class Producteur implements IProducteur {
 	public void setQtevendue(double qte){
 		this.qtevendue=qte;
 	}
+	public double getQtevendue(){
+		return this.qtevendue;
+	}
 	
 
 	public void notificationVente(double quantite, double coursActuel) {
