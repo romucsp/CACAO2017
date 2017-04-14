@@ -8,6 +8,10 @@ public interface transformateur {
 	public double QteSouhaite();
 	
 	public void notificationAchat(double vendu, double prix);
+	
+	
+	public int hashCode();
+
 
 }
 
