@@ -5,10 +5,11 @@ public class Recolte {
 	private double indiceRecolte; // Indicateur variant entre 0 et 1 : pourcentage pour fixer nb de fèves totales
 	private int qterecoltee;
 	
-	public Recolte(int qterecoltee, double indiceRecolte){
+	public Recolte(//int qterecoltee, 
+			double indiceRecolte){// indice initial
 		
 		this.indiceRecolte=indiceRecolte;
-		qterecoltee=(int)(SURFACE_CULTIVABLE*indiceRecolte);
+		this.qterecoltee=(int)(SURFACE_CULTIVABLE*indiceRecolte);
 	}
 
 	public int getQterecoltee() {
