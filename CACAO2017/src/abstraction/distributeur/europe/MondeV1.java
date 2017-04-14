@@ -1,3 +1,4 @@
+// classe codée par Numa
 package abstraction.distributeur.europe;
 
 import java.util.ArrayList;
