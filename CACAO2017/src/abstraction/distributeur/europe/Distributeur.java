@@ -40,7 +40,6 @@ public abstract class Distributeur implements Acteur,IDistributeur{
 	}
 
 
-
 	public void setVente(Vente vente) {
 		this.derniereVente = vente;
 	}
