@@ -1,6 +1,6 @@
 package abstraction.producteur.ameriquelatine;
 
-import abstraction.fourni.v0.IProducteur;
+
 
 public class Producteur implements IProducteur {
 	private String nom;
@@ -31,20 +31,17 @@ public class Producteur implements IProducteur {
 		this.coursActuel=coursActuel;
 	}
 
-	public void notificationVente(double quantite,double coursActuel) {
-		this.setQtevendue(quantite);
-		this.setCoursActuel(coursActuel);
-
-	}
 	@Override
 	public double quantiteMiseEnVente() {
-		// TODO Auto-generated method stub
-		return 0;
+		this.qtemiseenvente=stock.getVente();
+		return this.qtemiseenvente;
 	}
-	@Override
-	public void notificationVente(double quantite) {
-		// TODO Auto-generated method stub
-		
+
+	public void notificationVente(double quantite, double coursActuel) {
+		this.setQtevendue(quantite);
+		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
+			
 	}
+	
 
 }
