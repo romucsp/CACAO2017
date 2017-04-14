@@ -11,8 +11,8 @@ public class TransformateurUsa implements transformateur,Acteur{
 	private TransfoChocolat Transfo=new TransfoChocolat(premiere,finis);
 	private Tresorie tresorie=new Tresorie();
 	private int unitéventechocolat=100;
-	private double bornesmax=8;
-	private double bornesmin=4;
+	private double bornesmax=8000;
+	private double bornesmin=4000;
 	private ArrayList<Integer> prixmatprem = new ArrayList<Integer>();
 	
 	public TransformateurUsa(){
