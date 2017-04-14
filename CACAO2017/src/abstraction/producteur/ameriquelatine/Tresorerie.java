@@ -21,7 +21,6 @@ public class Tresorerie {
 		this.charges = charges ;
 		this.tresorerie = tresorerie ;	
 		this.resultat=ca-charges;
-		this.qtevendue = producteur.quantiteMiseEnvente();
 	}
 	
 	 public double getCa(){
@@ -35,7 +34,7 @@ public class Tresorerie {
 	 }
 
 	public void setCa( int ca) {
-		//this.ca = this.qtevendue*this.coursActuel;
+		
 	}
 	public void setCharges(int charges){
 		this.charges = charges ;
