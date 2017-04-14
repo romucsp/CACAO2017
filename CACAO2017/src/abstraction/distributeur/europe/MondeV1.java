@@ -20,7 +20,8 @@ public class MondeV1 extends Monde {
 		
 		distributeurs.add(dEuropeen);
 		
-		Marche marche2 = new Marche(this.distributeurs, this.transformateurs);
+		Marche marche2 = new Marche(this.distributeurs, this.transformateurs);	/**Création du marché entre distributeur
+																				  *et transformateur*/
 		
 		
 	}
