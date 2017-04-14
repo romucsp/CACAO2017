@@ -1,5 +1,6 @@
 package abstraction.transformateur.usa;
 import abstraction.transformateur.usa.interfacemarche.*;
+import abstraction.producteur.cotedivoire.*;
 //Souchu
 public class TransformateurUsa implements transformateur{
 	private StockProduitsFinis finis = new StockProduitsFinis(0);
@@ -38,6 +39,7 @@ public class TransformateurUsa implements transformateur{
 			return bornesmin;
 		}
 	}
+	@Override
 	public void notif(double prix, double quantité) {
 		this.finis.enleverChoco(quantité);
 		this.tresorie.setCompteCourant(this.tresorie.getCompteCourant()+quantité*prix);
@@ -49,5 +51,14 @@ public class TransformateurUsa implements transformateur{
 		return q-this.premiere.getCacao();
 		
 	}
+	
+	public void notificationAchat(double vendu, double prix){
+		this.tresorie.setCompteCourant(tresorie.getCompteCourant()-prix);
+		this.premiere.setCacao(premiere.getCacao()+vendu);
+		
+	}
+	
+	
+	
 	
 }
