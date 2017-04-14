@@ -11,6 +11,13 @@ public class Producteur {
 		this.nom="Amerique Latine";
 		this.Qtemiseenvente=stock.getProduction();
 	}
+	public String getNom(){
+		return this.nom ;
+	}
+	
+	public int hashCode() {
+		return this.getNom().hashCode() ;
+	}
 
 	public int Qtemiseenvente(){
 		return Qtemiseenvente;
