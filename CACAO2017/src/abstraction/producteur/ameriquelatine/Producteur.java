@@ -5,11 +5,11 @@ import abstraction.fourni.v0.IProducteur;
 public class Producteur {
 	private String nom;
 	private Stock stock;
-	private int Qtemiseenvente;
+	private int qtemiseenvente;
 	
 	public Producteur(Stock stock){
 		this.nom="Amerique Latine";
-		this.Qtemiseenvente=stock.getProduction();
+		this.qtemiseenvente=stock.getProduction();
 	}
 	public String getNom(){
 		return this.nom ;
@@ -20,7 +20,7 @@ public class Producteur {
 	}
 
 	public int Qtemiseenvente(){
-		return Qtemiseenvente;
+		return qtemiseenvente;
 	}
 
 	public void notificationVente(double quantite) {
