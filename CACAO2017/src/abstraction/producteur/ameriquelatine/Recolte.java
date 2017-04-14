@@ -5,9 +5,7 @@ public class Recolte {
 	private double indiceRecolte; // Indicateur variant entre 0 et 1 : pourcentage pour fixer nb de fèves totales
 	private int qterecoltee;
 	
-	public Recolte(//int qterecoltee, 
-			double indiceRecolte){// indice initial
-		
+	public Recolte(double indiceRecolte){// indice initial
 		this.indiceRecolte=indiceRecolte;
 		this.qterecoltee=(int)(SURFACE_CULTIVABLE*indiceRecolte);
 	}
@@ -17,16 +15,8 @@ public class Recolte {
 
 	}
 
-	public int getSurfacecultivable() {
-		return SURFACE_CULTIVABLE;
-	}
-
-	public double getIndiceRecolte() {
-		return indiceRecolte;
-	}
-
-	public void setIndiceRecolte(double indiceRecolte) {
-		this.indiceRecolte = indiceRecolte;
+	public void miseAJourIndice() {
+		this.indiceRecolte=Math.random();
 	}
 	
 	
