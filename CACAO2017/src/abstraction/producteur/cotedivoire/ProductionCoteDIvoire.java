@@ -17,7 +17,7 @@ public class ProductionCoteDIvoire implements Production{
 		return this.getNom().hashCode();
 	}
 	
-	//Constructeur Pdtion cote d'ivoire
+	//Constructeur Production cote d'ivoire
 	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach){ 
 		this.productionmoyenne=prodmoy;
 		this.productions = prods; 
