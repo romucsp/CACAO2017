@@ -1,28 +1,34 @@
 package abstraction.transformateur.europe;
 
-public class EchangesDistributeurs {
+import abstraction.transformateur.usa.interfacemarche.transformateur;
 
-	private double prixmin;     //prix minimum fixé par nous pour ne pas vendre a perte
-	private double prixachat;	//prix souhaité par le distributeur 
-	private double a;			//facteur a déterminé pour la régression linéaire du prixmin en fonction des stocks restant, du prix du cacao etc.
-	private double b; 			// idem
+public class EchangesDistributeurs implements transformateur {
+
+	private Stock stockchocolat;
 	
-	public EchangesDistributeurs(double prixmin){
-		this.prixmin=prixmin;
+	public EchangesDistributeurs(double prixmin, Stock stockchocolat){
+		this.stockchocolat=stockchocolat;
 	}
 	
-	public double getPrixmin(){
-		if (this.prixmin>prixachat){
+	@Override
+	public double getprixMin() {
+		double a = 1000*Math.random();
+		double prixmin = 4000;
+		double stockchocolat=this.stockchocolat.getstockchocolat();
+		if (stockchocolat<100){
 			return 10000;
 		}
 		else{
-			this.prixmin=a*this.prixmin+b;
-			return this.prixmin;
+			return prixmin+=a;
 		}
+		// TODO Auto-generated method stub
 	}
-	
-	public void setPrixmin(double prixmin){
-		this.prixmin=prixmin;
+
+	@Override
+	public void notif(double prix, double quantité) {
+		// TODO Auto-generated method stub
+		this.stockchocolat.setstockchocolat(this.stockchocolat.getstockchocolat()-quantité);
+		double benef=prix*quantité;
 	}
 	
 	
