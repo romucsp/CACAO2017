@@ -66,7 +66,9 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		}
 	}
 	public void next() {
-		Bourse();
+		Bourse(); 
+		setQuantiteAchetableGlob(0.0);
+		setQuantiteVoulueGlob(0.0);
 		Map<IProducteur, Integer> Prod = new HashMap<IProducteur,Integer>();
 		Map<ITransformateur, Integer> Trans = new HashMap<ITransformateur, Integer>();
 		//On creer une table de hashage qui correspond a un tableau IProd/ quantite 
@@ -78,17 +80,17 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 			Trans.put(this.transformateurs.get(i), (int)this.transformateurs.get(i).quantiteSouhaitee());
 		}
 		// si on réecrit la meme ligne juste en changeant la valeur du integer ca modifie juste sa valeur donc 
-		// c'est un moyen de garder en mémoire la valeur pour chaque prod et transformateur
+		// c'est un moyen de garder en mémoire la valeur pour chaque prod et transformateurs
 		int qttEnVente=0;
 		for (IProducteur p : Prod.keySet()){
 			qttEnVente += Prod.get(p);
 		}
-		this.quantiteAchetableGlob=qttEnVente;
+		setQuantiteAchetableGlob(qttEnVente);
 		int qttSouhaitee=0; 
 		for (ITransformateur t : Trans.keySet()){
 			qttSouhaitee+= Trans.get(t);
 		}
-		this.quantiteVoulueGlob=qttSouhaitee;
+		setQuantiteVoulueGlob(qttSouhaitee);
 		if (qttEnVente>=qttSouhaitee) {
 			for (ITransformateur t : Trans.keySet()){
 				//t.notificationAchat(Trans.get(t),this.getCoursActuel());
@@ -106,8 +108,6 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 				//p.notificationVente(Prod.get(p),this.getCoursActuel());
 			}
 		}
-		
-		
 		
 	}
 }
