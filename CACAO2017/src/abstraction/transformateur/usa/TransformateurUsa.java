@@ -6,10 +6,10 @@ import abstraction.transformateur.usa.interfacemarche.*;
 import abstraction.producteur.cotedivoire.*;
 //Souchu
 public class TransformateurUsa implements transformateur,Acteur{
-	private StockProduitsFinis finis = new StockProduitsFinis(1000000);
+	private StockProduitsFinis finis = new StockProduitsFinis(200);
 	private StockMatPremiere premiere=new StockMatPremiere(1000000,1000000,1000000,1000000);
 	private TransfoChocolat Transfo=new TransfoChocolat(premiere,finis);
-	private Tresorie tresorie=new Tresorie();
+	private Tresorerie tresorie=new Tresorerie(500000);
 	private int unitéventechocolat=100;
 	private double bornesmax=8000;
 	private double bornesmin=4000;
