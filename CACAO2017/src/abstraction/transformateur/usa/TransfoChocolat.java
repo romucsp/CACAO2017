@@ -4,7 +4,7 @@ public class TransfoChocolat {
 	private StockMatPremiere premiere;
 	private StockProduitsFinis finis;
 	private double[] recette =new double[4];
-	private double[] demande=new double[4];
+	
 	private double[] stocks=new double[4];
 	private int SUCRE =2;
 	private int CACAO =0;
@@ -30,6 +30,7 @@ public class TransfoChocolat {
 	}
 	
 	public void produireChoco(double quantité){	
+		double[] demande=new double[4];
 		lireStock();
 		boolean suffisant=true;
 		double maxmanque=0;
