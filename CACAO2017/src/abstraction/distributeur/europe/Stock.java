@@ -55,4 +55,12 @@ public class Stock {
 			this.getStock().remove(new QuantiteChoco(Choco, nombre_de_choco));
 	}
 	
+	public int nbChoco(){
+		int nb = 0;
+		for (int i=0; i<this.getStock().size(); i++){
+			nb = nb + this.getStock().get(i).getQuantite();
+		}
+		return nb;
+	}
+	
 }
