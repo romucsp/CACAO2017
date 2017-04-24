@@ -33,9 +33,9 @@ public class Tresorerie {
 		 return this.tresorerie ;
 	}
 	
-	public double coût(Stock stock){
-		return CHARGESPROD + stock.getInitial()*COUTSTOCK;
-	}
+/*	public double coût(Stock stock){
+		return CHARGESPROD + stock.getStock()*COUTSTOCK;
+	}*/
 
 
 	
