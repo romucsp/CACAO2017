@@ -8,7 +8,6 @@ import java.util.ArrayList;
  * Commentaires Antoine
  *
  */
-
 public interface Production {
 	public int getProductionmoyenne();    // Accesseur production moyenne
 	public ArrayList<Integer> getProductions();    //Accesseur liste de production
