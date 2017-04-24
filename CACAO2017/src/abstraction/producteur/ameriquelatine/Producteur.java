@@ -40,7 +40,7 @@ public class Producteur implements IProducteur {
 	}
 
 	public void notificationVente(double quantite, double coursActuel) {
-		this.Treso.setTresorerie(this.Treso.getTresorerie()+coursActuel*quantite);
+	//	this.Treso.setTresorerie(this.Treso.getTresorerie()+coursActuel*quantite);
 		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
 			
 	}
