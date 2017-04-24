@@ -2,61 +2,69 @@ package abstraction.producteur.cotedivoire;
 
 import abstraction.fourni.Acteur;
 import abstraction.fourni.v0.IProducteur;
+import java.util.ArrayList; 
 
-// modifié by fcadre
+// modifié by fcadre, comments by antoineroson
 
-public class ProductionCoteDIvoire implements Acteur, IProducteur{
-	private int production; 
-	private int prod_min; 
-	private int prod_max; 
+public class ProductionCoteDIvoire implements Production{
+	private int productionmoyenne; // Production moyenne de la cote d'ivoire
+	private ArrayList<Integer>  productions; //Liste des productions par périodes
+	private int quantiteProduite; // ????
+	private int quantiteAchetable; // ????
 	
-	public ProductionCoteDIvoire(int prod, int prodmin,int prodmax){ 
-		this.production=prod;
-		this.prod_min=prodmin; 
-		this.prod_max=prodmax; 
+	//Cf marché
+	public int hashCode() {
+		return this.getNom().hashCode();
 	}
 	
-	public void SetProd(int p){ 
-		this.production=p;
+	//Constructeur Production cote d'ivoire
+	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach){ 
+		this.productionmoyenne=prodmoy;
+		this.productions = prods; 
+		this.quantiteProduite = qtprod; 
+		this.quantiteAchetable = qtach;
 	}
 	
-	public void SetProdMin(int pm){
-		this.prod_min=pm;
+	//Accesseur Production moyenne
+	public int getProductionmoyenne(){ 
+		return this.productionmoyenne; 
 	}
 	
-	public void SetProdMax(int pma){
-		this.prod_max=pma;
+	//Accesseur liste de production
+	public ArrayList<Integer> getProductions(){
+		return this.productions; 
 	}
 	
-	public int GetProd(){
-		return this.production;
+	//Accesseur quantité produite
+	public int getQuantiteProd(){ 
+		return this.getProductions().get(this.productions.size());   // Récupére la dernière production sur la période
 	}
 	
-	public int GetProdMin(){
-		return this.prod_min;
+	//Accesseur Quantité Achetable
+	public int getQuantiteAch(){ 
+		return this.getQuantiteProd(); //V1: Quantité achetable = Quantité produite
+		/// A voir pour le stock ....!
 	}
 	
-	public int GetProdMax(){
-		return this.prod_max;
+	// Méthode varitation random de la production
+	public void variationProduction(){
+		double variation = 0.10;  //Variation de +- 10% 
+		//Création d'une enveloppe (prod_min->prod_max)
+		int prod_min = this.getProductionmoyenne() - (int)(this.getProductionmoyenne()*variation); 
+		int prod_max = this.getProductionmoyenne() + (int)(this.getProductionmoyenne()*variation);
+		int prod = prod_min + (int)Math.random()*(prod_max - prod_min); // Production random entre prod_min et prod_max
+		productions.add(prod); // ajout dans la liste de production
 	}
 	
-	public double quantiteMiseEnVente() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	public void notificationVente(double quantite) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
+	//Accesseur Nom
 	public String getNom() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Production Cote d'Ivoire"; 
 	}
-	@Override
+	
+	//NEXT "Centre du programme -> Passage à la période suivante" 
+	
 	public void next() {
 		// TODO Auto-generated method stub
-		
 	}
+	
 }
