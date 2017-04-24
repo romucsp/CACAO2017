@@ -3,7 +3,7 @@
 package abstraction.distributeur.europe;
 import abstraction.fourni.v0.*;
 import abstraction.fourni.*;
-public abstract class Distributeur implements Acteur,IDistributeur{
+public class Distributeur implements Acteur,IDistributeur{
 	private Vente derniereVente; // derniere vente effectuee sur le marche
 	private double stock;
 	private double qteDemandee;
@@ -56,5 +56,11 @@ public abstract class Distributeur implements Acteur,IDistributeur{
 	public void notif(Vente vente){
 		this.setVente(vente);
 		this.setStock(this.getStock()-vente.getQuantite());
+	}
+	
+	public void next(){}
+	
+	public String getNom(){
+		return "";
 	}
 }
