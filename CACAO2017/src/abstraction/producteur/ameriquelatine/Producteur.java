@@ -7,6 +7,7 @@ import abstraction.fourni.v0.Constantes;
 public class Producteur implements IProducteur {
 	private String nom;
 	private Stock stock;
+	private Tresorerie Treso;
 	private double qtemiseenvente;
 	private double coursActuel;
 	private double qtevendue;
@@ -39,7 +40,7 @@ public class Producteur implements IProducteur {
 	}
 
 	public void notificationVente(double quantite, double coursActuel) {
-		this.setQtevendue(quantite);
+	//	this.Treso.setTresorerie(this.Treso.getTresorerie()+coursActuel*quantite);
 		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
 			
 	}
