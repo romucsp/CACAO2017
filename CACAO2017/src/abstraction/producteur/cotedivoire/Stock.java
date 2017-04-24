@@ -19,4 +19,5 @@ public class Stock implements IStock{
 	public void setStock(int stock){ 
 		this.stock = stock; //A modifier en ajoutant la notification de vente
 	}
+	
 }
