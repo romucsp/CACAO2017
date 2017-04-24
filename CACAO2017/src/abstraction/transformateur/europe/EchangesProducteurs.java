@@ -21,7 +21,7 @@ public class EchangesProducteurs {
 	public double getQuantiteMax(){
 		double stockCacao=this.s.getstockcacao();
 		double stockMax=this.s.getStockMax();
-		return stockMax-stockCacao;
+		return stockMax-stockCacao; //test
 		
 	}
 	
