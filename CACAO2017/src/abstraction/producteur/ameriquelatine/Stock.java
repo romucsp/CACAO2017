@@ -21,6 +21,10 @@ public class Stock {
 		return this.initial+recolte.getQterecoltee();
 	}
 	
+	public int getInitial(){
+		return this.initial;
+	}
+	
 }
 
 
