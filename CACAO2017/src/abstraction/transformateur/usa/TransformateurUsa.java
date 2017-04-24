@@ -42,7 +42,7 @@ public class TransformateurUsa implements transformateur,Acteur{
 	}
 	
 	public void produirechocolat(){
-		double StockSouhaite =1000000;
+		double StockSouhaite =200*unitéventechocolat;
 		Transfo.produireChoco(StockSouhaite-finis.getStockChocolat());
 	}
 	
