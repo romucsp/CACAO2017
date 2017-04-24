@@ -5,19 +5,22 @@ import abstraction.fourni.Monde;
 import abstraction.fourni.v0.Constantes;
 
 public class Producteur implements IProducteur {
-	private String nom;
-	private Stock stock;
-	private Tresorerie Treso;
+	public String nom;
+	private GestionVentes ventes;
+	private Tresorerie treso;
 	private double qtemiseenvente;
 	private double coursActuel;
 	private double qtevendue;
 	
-	public Producteur(Stock stock){
-		this.nom="Amerique Latine";
+	public Producteur(String nom, GestionVentes ventes){
+		this.nom=nom;
+		this.ventes=ventes;
+		this.qtemiseenvente=ventes.quantiteMiseEnVente();
+
 	}
 	
 	public String getNom(){
-		return this.nom ;
+		return this.nom;
 	}
 	
 	public int hashCode() {
@@ -40,13 +43,13 @@ public class Producteur implements IProducteur {
 	}
 
 	public void notificationVente(double quantite, double coursActuel) {
-	//	this.Treso.setTresorerie(this.Treso.getTresorerie()+coursActuel*quantite);
+		//this.Treso.setTresorerie(this.Treso.getTresorerie()+coursActuel*quantite);
 		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
+		this.ventes.setQuantiteVendue(quantite);
 			
 	}
 	@Override
 	public double quantiteMiseEnvente() {
-		// TODO Auto-generated method stub
 		return this.qtemiseenvente;
 	}
 	
