@@ -1,6 +1,3 @@
-/*Classe codée par Julien/Walid 
- */
-
 package abstraction.distributeur.europe;
 
 import java.util.ArrayList;

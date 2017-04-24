@@ -3,6 +3,7 @@ package abstraction.distributeur.europe;
 
 import java.util.ArrayList;
 import abstraction.fourni.Monde;
+import abstraction.transformateur.usa.TransformateurUsa;
 
 public class MondeV1 extends Monde {
 	
@@ -19,6 +20,10 @@ public class MondeV1 extends Monde {
 		Distributeur dEuropeen = new Distributeur(new Vente(70000000,1), 13, 13);
 		
 		distributeurs.add(dEuropeen);
+		
+		TransformateurUsa tUsa = new TransformateurUsa();
+		
+		transformateurs.add((ITransformateur) tUsa);
 		
 		Marche marche2 = new Marche(this.distributeurs, this.transformateurs);	/**Création du marché entre distributeur
 																				  *et transformateur*/
