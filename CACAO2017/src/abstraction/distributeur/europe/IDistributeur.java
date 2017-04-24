@@ -1,5 +1,9 @@
-package abstraction.distributeur.europe;
+//Interface codée par Walid/Julien
 
-public interface IDistributeur {
+package abstraction.distributeur.europe;
+import abstraction.fourni.*;
+
+public interface IDistributeur extends Acteur{
 	public double getPrixMax();
+	public void notif(Vente vente);
 }

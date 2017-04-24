@@ -1,24 +1,53 @@
+
 package abstraction.producteur.ameriquelatine;
 
-import abstraction.fourni.v0.IProducteur;
 
-public class Producteur {
+
+public class Producteur implements IProducteur {
 	private String nom;
 	private Stock stock;
-	private int Qtemiseenvente;
+	private int qtemiseenvente;
+	private double coursActuel;
+	private double qtevendue;
 	
 	public Producteur(Stock stock){
 		this.nom="Amerique Latine";
-		this.Qtemiseenvente=stock.getProduction();
-	}
-
-	public int Qtemiseenvente(){
-		return Qtemiseenvente;
-	}
-
-	public void notificationVente(double quantite) {
+		this.qtemiseenvente=12;
 		
+	
 
 	}
+	public String getNom(){
+		return this.nom ;
+	}
+	
+	public int hashCode() {
+		return this.getNom().hashCode() ;
+	}
+
+
+	public void setCoursActuel(double coursActuel){
+		this.coursActuel=coursActuel;
+	}
+	public void setQtevendue(double qte){
+		this.qtevendue=qte;
+	}
+	public double getQteVendue(){
+		return this.qtevendue;
+	}
+	
+
+	public void notificationVente(double quantite, double coursActuel) {
+		this.setQtevendue(quantite);
+		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
+			
+	}
+	@Override
+	public double quantiteMiseEnvente() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 
 }
