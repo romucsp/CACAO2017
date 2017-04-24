@@ -1,6 +1,6 @@
 package abstraction.transformateur.europe;
 
-import abstraction.transformateur.europe.interfacemarche.transformateur;
+import abstraction.transformateur.usa.interfacemarche.transformateur;
 
 public class EchangesDistributeurs implements transformateur {
 
