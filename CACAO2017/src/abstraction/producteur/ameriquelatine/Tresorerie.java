@@ -21,34 +21,25 @@ public class Tresorerie {
 //qté vendue et cours actuel depuis producteur;
 	
 	public Tresorerie(){
-		this.ca= ca;
-
 		this.tresorerie = tresorerie ;	
+		this.stock=stock;
+		this.producteur=producteur;
 	}
 	
-	 public double getCa(){
-		 return this.ca ;
-	 }
 
-	 public double getTresorerie(){
+	public double getTresorerie(){
 		 return this.tresorerie ;
 	 }
 
 	public void setCa( int ca) {
 		
 	}
-	public void setCharges(int charges){
-		this.charges = charges ;
-	}
+
 	
 //Actualisation trésorerie
 	private void setTresorerie(int tresorerie){
 		this.tresorerie = tresorerie ;
 	}
 
-	
-	public void next(){
-//		this.ca = 		
-	}
 	
 }
