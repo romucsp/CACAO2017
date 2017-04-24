@@ -42,7 +42,7 @@ public class ProductionCoteDIvoire implements Production{
 	}
 	
 	//Accesseur Quantité Achetable
-	public int getQuantiteAch(){ 
+	public int getQuantiteMiseEnVente(){ 
 		return this.getQuantiteProd(); //V1: Quantité achetable = Quantité produite
 		/// A voir pour le stock ....!
 	}
