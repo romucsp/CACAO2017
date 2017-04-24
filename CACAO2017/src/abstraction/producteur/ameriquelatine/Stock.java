@@ -15,9 +15,11 @@ public class Stock {
 	}
 	
 	public void miseAJourStock(Recolte recolte) {
-		this.initial=this.initial+recolte.getQterecoltee();
+		this.initial=(int)(this.initial+recolte.getQterecoltee()-this.vente.getQuantiteVendue());
 	}
-	
+	public int stockintermediaire(){
+		return this.initial+recolte.getQterecoltee();
+	}
 	
 }
 

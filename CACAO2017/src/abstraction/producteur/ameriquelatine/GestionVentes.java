@@ -4,10 +4,20 @@ package abstraction.producteur.ameriquelatine;
 public class GestionVentes {
 // renvoie les ventes
 	private Stock stock;
-	private Producteur producteur;
-	private double quantiteMiseEnVente;
+	private double quantiteVendue;
 	
-	public GestionVentes(double quantiteMiseEnVente){
-		
+	public GestionVentes(){
+		this.quantiteVendue=0;
+	}
+	
+	public int quantiteMiseEnVente(){
+		return (int)(0.8*stock.stockintermediaire());
+	}
+	
+	public double getQuantiteVendue(){
+		return this.quantiteVendue;
+	}
+	public void setQuantiteVendue(double qteVendue){
+		this.quantiteVendue=qteVendue;
 	}
 }
