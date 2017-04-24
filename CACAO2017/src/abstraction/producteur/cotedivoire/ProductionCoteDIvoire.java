@@ -37,7 +37,8 @@ public class ProductionCoteDIvoire implements Production{
 	
 	//Accesseur quantité produite
 	public int getQuantiteProd(){ 
-		return this.getProductions().get(this.productions.size());   // Récupére la dernière production sur la période
+		return this.getProductions().get(this.productions.size());   
+		// Récupére la dernière production sur la période
 	}
 	
 	//Accesseur Quantité Achetable
