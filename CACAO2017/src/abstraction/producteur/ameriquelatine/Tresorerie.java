@@ -36,15 +36,11 @@ public class Tresorerie {
 	public double coût(Stock stock){
 		return CHARGESPROD + stock.getInitial()*COUTSTOCK;
 	}
-	public void setCa( int ca) {
-		
-	}
+
 
 	
 //Actualisation trésorerie
-	private void setTresorerie(int tresorerie){
-		this.tresorerie = tresorerie ;
-	}
-
+//	private void setTresorerie(int tresorerie){
+//		this.tresorerie = setTresorerie(tresorerie)+0.2 ;
 	
 }
