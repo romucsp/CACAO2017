@@ -53,9 +53,6 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		return "Marché du cacao";
 	}
 	public void Bourse () {
-		setQuantiteAchetableGlob(0.0);
-		setQuantiteVoulueGlob(0.0);
-		
 		// La bourse va faire évoluer le coursActuel en fonction de l'offre et de la demande bornée entre coursMin et coursMax
 		if (this.quantiteAchetableGlob>=this.quantiteVoulueGlob){
 				if (this.coursActuel>this.coursMin){
@@ -69,10 +66,9 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		}
 	}
 	public void next() {
-		
-		// addProducteur(....)
-		// addTransformateur(...)
-		Bourse();
+		Bourse(); 
+		setQuantiteAchetableGlob(0.0);
+		setQuantiteVoulueGlob(0.0);
 		Map<IProducteur, Integer> Prod = new HashMap<IProducteur,Integer>();
 		Map<ITransformateur, Integer> Trans = new HashMap<ITransformateur, Integer>();
 		//On creer une table de hashage qui correspond a un tableau IProd/ quantite 
@@ -84,13 +80,34 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 			Trans.put(this.transformateurs.get(i), (int)this.transformateurs.get(i).quantiteSouhaitee());
 		}
 		// si on réecrit la meme ligne juste en changeant la valeur du integer ca modifie juste sa valeur donc 
-		// c'est un moyen de garder en mémoire la valeur pour chaque prod et transformateur
-		int qttTotale=0;
+		// c'est un moyen de garder en mémoire la valeur pour chaque prod et transformateurs
+		int qttEnVente=0;
 		for (IProducteur p : Prod.keySet()){
-			qttTotale += Prod.get(p);
+			qttEnVente += Prod.get(p);
 		}
-		// Il faut faire de meme avec les transformateurs. 
-		
+		setQuantiteAchetableGlob(qttEnVente);
+		int qttSouhaitee=0; 
+		for (ITransformateur t : Trans.keySet()){
+			qttSouhaitee+= Trans.get(t);
+		}
+		setQuantiteVoulueGlob(qttSouhaitee);
+		if (qttEnVente>=qttSouhaitee) {
+			for (ITransformateur t : Trans.keySet()){
+				//t.notificationAchat(Trans.get(t),this.getCoursActuel());
+			}
+			for (IProducteur p : Prod.keySet()){
+				//p.notificationVente(Prod.get(p)-this.quantiteVoulueGlob,this.getCoursActuel());
+			}
+		}
+		else {
+			// a gérer avec les pourcentages
+			for (ITransformateur t : Trans.keySet()){
+				//t.notificationAchat(12,this.getCoursActuel());
+			}
+			for (IProducteur p : Prod.keySet()){
+				//p.notificationVente(Prod.get(p),this.getCoursActuel());
+			}
+		}
 		
 	}
 }
