@@ -6,23 +6,27 @@ public class TransfoChocolat {
 	private double[] recette =new double[4];
 	private double[] demande=new double[4];
 	private double[] stocks=new double[4];
+	private int SUCRE =2;
+	private int CACAO =0;
+	private int LECITINE =3;
+	private int LAIT =1;
 
 	/*souchu*/
 	public TransfoChocolat( StockMatPremiere premiere,StockProduitsFinis finis){
 		this.finis=finis;
 		this.premiere=premiere;
-		recette[0]=0.6;
-		recette[1]=0.15;
-		recette[2]=0.2;
-		recette[3]=0.05;
+		recette[CACAO]=0.6;
+		recette[LAIT]=0.15;
+		recette[SUCRE]=0.2;
+		recette[LECITINE]=0.05;
 		
 	}
 	
 	private void lireStock(){
-		stocks[0]=premiere.getCacao();
-		stocks[1]=premiere.getLait();
-		stocks[2]=premiere.getSucre();
-		stocks[3]=premiere.getLecitine();
+		stocks[CACAO]=premiere.getCacao();
+		stocks[LAIT]=premiere.getLait();
+		stocks[SUCRE]=premiere.getSucre();
+		stocks[LECITINE]=premiere.getLecitine();
 	}
 	
 	public void produireChoco(double quantité){	

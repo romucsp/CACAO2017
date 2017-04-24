@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 import abstraction.fourni.Acteur;
 import abstraction.transformateur.usa.interfacemarche.*;
-import abstraction.producteur.cotedivoire.*;
 //Souchu
 public class TransformateurUsa implements transformateur,Acteur{
 	private StockProduitsFinis finis = new StockProduitsFinis(200);
@@ -82,6 +81,14 @@ public class TransformateurUsa implements transformateur,Acteur{
 	
 	public int hashCode() {
 		return this.getNom().hashCode();
+	}
+	
+	public void test(){
+		
+	}
+	
+	public void main(String[] arg){
+		
 	}
 	
 	
