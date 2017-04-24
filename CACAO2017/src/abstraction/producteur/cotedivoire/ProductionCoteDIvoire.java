@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 // modifié by fcadre, comments by antoineroson
 
-public class ProductionCoteDIvoire implements Production{
+public class ProductionCoteDIvoire implements Production, Acteur{
 	private int productionmoyenne; // Production moyenne de la cote d'ivoire
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
 	private int quantiteProduite; // ????
