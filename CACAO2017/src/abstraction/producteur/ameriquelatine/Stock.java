@@ -11,10 +11,22 @@ public class Stock {
 	private Producteur producteur;
 	private int stock; 
 	
+<<<<<<< Updated upstream
 	
 	public Stock(Producteur producteur, Recolte recolte) {
 		this.producteur=producteur;
 		this.stock=(int)(this.initial+this.recolte.getQterecoltee()-this.producteur.getQteVendue());
+=======
+	public Stock(int initial, int vente, double qtevendue,int production) {
+		this.initial = initial;
+<<<<<<< Updated upstream
+
+=======
+		this.vente = vente;
+		this.qtevendue = qtevendue;
+		this.production = recolte.getQterecoltee();
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 	}
 	public Stock(){
 		initial=10000;
@@ -32,7 +44,11 @@ public class Stock {
 		return "Le stock initial est de"+ this.initial+ 
 				"; le cout de stockage est de" + COUT;
 	}
+<<<<<<< Updated upstream
 	
 	
 	
+=======
+
+>>>>>>> Stashed changes
 }
