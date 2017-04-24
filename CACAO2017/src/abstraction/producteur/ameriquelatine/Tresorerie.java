@@ -10,7 +10,9 @@ package abstraction.producteur.ameriquelatine;
 
 public class Tresorerie {
 //private double ca; //chiffres d'affaires de la période
-	public final static int CHARGESPROD=1000000; // ($) charges de production (hors coût de stock)
+	public final static int CHARGESPROD=1000000;// ($) charges de production (hors coût de stock)
+	public final static double COUTSTOCK=0.3;
+	private double resultat;
 	private double tresorerie; // argent en banque
 	private Stock stock;
 	private Producteur producteur ;
@@ -21,16 +23,19 @@ public class Tresorerie {
 //qté vendue et cours actuel depuis producteur;
 	
 	public Tresorerie(){
+		this.resultat=resultat;
 		this.tresorerie = tresorerie ;	
 		this.stock=stock;
 		this.producteur=producteur;
 	}
-	
 
 	public double getTresorerie(){
 		 return this.tresorerie ;
-	 }
-
+	}
+	
+	public double coût(Stock stock){
+		return CHARGESPROD + stock.getInitial()*COUTSTOCK;
+	}
 	public void setCa( int ca) {
 		
 	}
