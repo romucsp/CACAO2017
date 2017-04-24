@@ -63,8 +63,7 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 			}
 		}
 	}
-	public void next() {
-		Bourse(); 
+	public void next() { 
 		setQuantiteAchetableGlob(0.0);
 		setQuantiteVoulueGlob(0.0);
 		Map<IProducteur, Integer> Prod = new HashMap<IProducteur,Integer>();
@@ -106,6 +105,7 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 				p.notificationVente(Prod.get(p),this.getCoursActuel());
 			}
 		}
+		Bourse();
 		
 	}
 }
