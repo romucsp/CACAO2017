@@ -4,15 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import abstraction.fourni.Acteur;
-import abstraction.fourni.v0.IProducteur;
-import abstraction.fourni.v0.ITransformateur;
-import abstraction.fourni.v0.Producteur;
-import abstraction.fourni.v0.Transformateur;
+import abstraction.producteur.ameriquelatine.IProducteur;
+import abstraction.transformateur.usa.interfacemarche.transformateur;
 
 public class MarcheProd implements Acteur{ // Kevin et Adrien.
 	
 	private ArrayList<IProducteur> producteurs; //liste desproducteur
-	private ArrayList<ITransformateur> transformateurs ; // liste des transformateurs
+	private ArrayList<transformateur> transformateurs ; // liste des transformateurs
 	public double coursMin = 2500 ; // prix min du cours du cacao par tonne
 	public double coursMax = 3500 ; // prix max du cours du cacao par tonne
 	
@@ -22,16 +20,16 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 	
 	public MarcheProd() {
 		this.producteurs= new ArrayList<IProducteur>();  // a modifier par IProducteur une fois que les interfaces seront créees.
-		this.transformateurs= new ArrayList<ITransformateur>(); // a modifier par ITransformateur une fois que les interfaces seront créees.
+		this.transformateurs= new ArrayList<transformateur>(); // a modifier par ITransformateur une fois que les interfaces seront créees.
 		this.quantiteAchetableGlob=0.0;
 		this.quantiteVoulueGlob=0.0;
 		this.coursActuel=3000;
 	}
 	
-	public void addProducteur (Producteur p) {
+	public void addProducteur (IProducteur p) {
 		this.producteurs.add(p);
 	}
-	public void addTransformateur (Transformateur t) {
+	public void addTransformateur (transformateur t) {
 		this.transformateurs.add(t);
 	}
 	public double getQuantiteAchetable() {
@@ -70,14 +68,14 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		setQuantiteAchetableGlob(0.0);
 		setQuantiteVoulueGlob(0.0);
 		Map<IProducteur, Integer> Prod = new HashMap<IProducteur,Integer>();
-		Map<ITransformateur, Integer> Trans = new HashMap<ITransformateur, Integer>();
+		Map<transformateur, Integer> Trans = new HashMap<transformateur, Integer>();
 		//On creer une table de hashage qui correspond a un tableau IProd/ quantite 
 		
 		for (int i=0 ; i<this.producteurs.size(); i++) {
-			Prod.put(this.producteurs.get(i), (int)this.producteurs.get(i).quantiteMiseEnVente());
+			Prod.put(this.producteurs.get(i), (int)this.producteurs.get(i).quantiteMiseEnvente());
 		}
 		for (int i=0 ; i<this.transformateurs.size(); i++) {
-			Trans.put(this.transformateurs.get(i), (int)this.transformateurs.get(i).quantiteSouhaitee());
+			Trans.put(this.transformateurs.get(i), (int)this.transformateurs.get(i).QteSouhaite());
 		}
 		// si on réecrit la meme ligne juste en changeant la valeur du integer ca modifie juste sa valeur donc 
 		// c'est un moyen de garder en mémoire la valeur pour chaque prod et transformateurs
@@ -87,25 +85,25 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		}
 		setQuantiteAchetableGlob(qttEnVente);
 		int qttSouhaitee=0; 
-		for (ITransformateur t : Trans.keySet()){
+		for (transformateur t : Trans.keySet()){
 			qttSouhaitee+= Trans.get(t);
 		}
 		setQuantiteVoulueGlob(qttSouhaitee);
 		if (qttEnVente>=qttSouhaitee) {
-			for (ITransformateur t : Trans.keySet()){
-				//t.notificationAchat(Trans.get(t),this.getCoursActuel());
+			for (transformateur t : Trans.keySet()){
+				t.notificationAchat(Trans.get(t),this.getCoursActuel());
 			}
 			for (IProducteur p : Prod.keySet()){
-				//p.notificationVente(Prod.get(p)-this.quantiteVoulueGlob,this.getCoursActuel());
+				p.notificationVente(Prod.get(p)-this.quantiteVoulueGlob,this.getCoursActuel());
 			}
 		}
 		else {
 			// a gérer avec les pourcentages
-			for (ITransformateur t : Trans.keySet()){
-				//t.notificationAchat(12,this.getCoursActuel());
+			for (transformateur t : Trans.keySet()){
+				t.notificationAchat(12,this.getCoursActuel());
 			}
 			for (IProducteur p : Prod.keySet()){
-				//p.notificationVente(Prod.get(p),this.getCoursActuel());
+				p.notificationVente(Prod.get(p),this.getCoursActuel());
 			}
 		}
 		
