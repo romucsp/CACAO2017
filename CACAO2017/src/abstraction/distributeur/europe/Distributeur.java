@@ -55,7 +55,7 @@ public class Distributeur implements Acteur,IDistributeur{
 	
 	public void notif(Vente vente){
 		this.setVente(vente);
-		this.setStock(this.getStock()-vente.getQuantite());
+		this.setStock(this.getStock()+vente.getQuantite());
 	}
 	
 	public void next(){}
