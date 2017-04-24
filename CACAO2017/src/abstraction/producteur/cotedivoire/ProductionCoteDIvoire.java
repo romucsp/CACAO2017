@@ -1,11 +1,13 @@
 package abstraction.producteur.cotedivoire;
 
 import abstraction.fourni.Acteur;
+import abstraction.producteur.ameriquelatine.IProducteur;
+
 import java.util.ArrayList; 
 
 // modifié by fcadre, comments by antoineroson
 
-public class ProductionCoteDIvoire implements Production, Acteur{
+public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	private int productionmoyenne; // Production moyenne de la cote d'ivoire
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
 	private int quantiteProduite; // ????
@@ -65,6 +67,18 @@ public class ProductionCoteDIvoire implements Production, Acteur{
 	
 	public void next() {
 		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public double quantiteMiseEnvente() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void notificationVente(double quantite, double coursActuel) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
