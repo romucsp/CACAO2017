@@ -2,18 +2,12 @@ package abstraction.transformateur.europe;
 
 public class EchangesProducteurs {
 	
-	private double quantiteSouhaitee;
 	private Stock s;
 	
-	public EchangesProducteurs(double quantiteSouhaitee,Stock s){
-		this.quantiteSouhaitee = quantiteSouhaitee;
+	public EchangesProducteurs(Stock s){
 		this.s=s;
 	}
-	
-	public double getQuantiteSouhaitee(){
-		return this.quantiteSouhaitee;
-	}
-	
+
 	public Stock getStock(){
 		return this.s;
 	}

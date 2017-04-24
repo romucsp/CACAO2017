@@ -19,7 +19,7 @@ public class EchangesDistributeurs implements transformateur {
 			return 10000;
 		}
 		else{
-			return prixmin+=a;
+			return prixmin+a;
 		}
 		// TODO Auto-generated method stub
 	}
