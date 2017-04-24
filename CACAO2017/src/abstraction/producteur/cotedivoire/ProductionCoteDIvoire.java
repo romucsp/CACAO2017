@@ -1,7 +1,6 @@
 package abstraction.producteur.cotedivoire;
 
 import abstraction.fourni.Acteur;
-import abstraction.fourni.v0.IProducteur;
 import java.util.ArrayList; 
 
 // modifié by fcadre, comments by antoineroson
