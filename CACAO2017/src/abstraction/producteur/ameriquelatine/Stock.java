@@ -6,49 +6,23 @@ public class Stock {
 	
 // tout ce qui est produit est stocké, on gère les ventes à partir des stocks.
 	private int initial; //stock initial
-	public final static double COUT=0.3; //coût du stockage 
 	private Recolte recolte; //récolte de la période
-	private Producteur producteur;
-	private int stock; 
+	private GestionVentes vente;
 	
-<<<<<<< Updated upstream
-	
-	public Stock(Producteur producteur, Recolte recolte) {
-		this.producteur=producteur;
-		this.stock=(int)(this.initial+this.recolte.getQterecoltee()-this.producteur.getQteVendue());
-=======
-	public Stock(int initial, int vente, double qtevendue,int production) {
-		this.initial = initial;
-<<<<<<< Updated upstream
 
-=======
-		this.vente = vente;
-		this.qtevendue = qtevendue;
-		this.production = recolte.getQterecoltee();
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-	}
-	public Stock(){
-		initial=10000;
-		}
-	
-	public int getInitial() {
-		return this.initial;
+	public Stock() {
+		this.initial=1000;
 	}
 	
-	public void setInitial ( int initial) {
-		this.initial=initial;
+	public void miseAJourStock(Recolte recolte) {
+		this.initial=this.initial+recolte.getQterecoltee();
 	}
 	
-	public String toString() {
-		return "Le stock initial est de"+ this.initial+ 
-				"; le cout de stockage est de" + COUT;
-	}
-<<<<<<< Updated upstream
 	
-	
-	
-=======
-
->>>>>>> Stashed changes
 }
+
+
+	
+	
+	
+
