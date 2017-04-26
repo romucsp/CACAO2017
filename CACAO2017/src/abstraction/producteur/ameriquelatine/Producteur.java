@@ -51,6 +51,6 @@ public class Producteur implements IProducteur {
 	
 	public void next() {
 		stock.miseAJourStock() ;
-		recolte.miseAJourIndice();
+		recolte.miseAJourIndice(); //mise à jour de l'indice de recolte
 	}
 }
