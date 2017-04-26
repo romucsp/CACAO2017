@@ -1,5 +1,6 @@
 
 package abstraction.producteur.ameriquelatine;
+//26/04 Adrien
 
 import abstraction.fourni.Monde;
 import abstraction.fourni.v0.Constantes;
@@ -50,7 +51,7 @@ public class Producteur implements IProducteur {
 	}
 	
 	public void next() {
-		stock.miseAJourStock() ;
+		stock.miseAJourStock() ; //mise à jour du stock
 		recolte.miseAJourIndice(); //mise à jour de l'indice de recolte
 	}
 }

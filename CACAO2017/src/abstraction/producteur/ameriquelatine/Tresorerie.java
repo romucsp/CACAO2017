@@ -2,6 +2,7 @@ package abstraction.producteur.ameriquelatine;
 //Modifié par lolotteisyoung 14/04/2017
 //Modifié par lolotteisyoung 24/04/2017
 
+
 //import abstraction.fourni.Acteur;
 //import abstraction.fourni.Indicateur;
 //import abstraction.fourni.Journal;
