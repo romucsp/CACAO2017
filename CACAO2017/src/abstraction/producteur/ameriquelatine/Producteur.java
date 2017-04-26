@@ -15,9 +15,11 @@ public class Producteur implements IProducteur {
 	private Recolte recolte ;
 	
 	public Producteur(){
-		this.nom="Producteur Amerique";
-		this.ventes=new GestionVentes(stock);
-		this.recolte=new Recolte(0.5) ;
+		this.nom="Producteur AmeriqueLatine" ;
+		this.recolte=new Recolte(0.8) ;
+		this.stock=new Stock(recolte) ;
+		this.ventes=new GestionVentes(stock) ;
+		stock.setGestionVente(ventes) ;
 	}
 	
 	public String getNom(){
