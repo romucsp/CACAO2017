@@ -12,8 +12,8 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
 	private int quantiteProduite; // ????
 	private int quantiteAchetable; // ????
-	private Stock stock; 
-	private Treso tresorerie;
+	private Stock stock;          // Represente notre stock 
+	private Treso tresorerie;     // Représente notre trésorerie
 	
 	//Cf marché
 	public int hashCode() {
@@ -73,15 +73,15 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	}
 
 	@Override
-	public double quantiteMiseEnvente() {
-		Stock s = this.stock;
+	public double quantiteMiseEnvente() {   // correspond a la quantité mise en vente//
+		Stock s = this.stock;              // qui vaut le stock + la quantite produite//
 		s.setStock(this.getQuantiteProd());
 		return this.getQuantiteProd()+s.getStock();
 	}
 
 	@Override
-	public void notificationVente(double quantite, double coursActuel) {
-		this.tresorerie.setCa(quantite*coursActuel);
+	public void notificationVente(double quantite, double coursActuel) {    // grace a la notification de vente on met a jour // 
+		this.tresorerie.setCa(quantite*coursActuel);                       // notre tresorerie et notre stock //
 		this.stock.setStock(this.getQuantiteMiseEnVente()-quantite);
 		
 	}
