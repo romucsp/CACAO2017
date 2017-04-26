@@ -1,5 +1,5 @@
 package abstraction.transformateur.usa;
-//Mehdi
+//Mehdi, modif arthur
 
 
 public class AchatCacao {
@@ -8,10 +8,9 @@ public class AchatCacao {
 	
 	
 	
-	public AchatCacao(double q,double b, int d){
-		this.qtesouhaite=q ;
-
-		this.datecommande=d;
+	public AchatCacao(double qtesouhaite,int datecommande){
+		this.qtesouhaite=qtesouhaite;
+		this.datecommande=datecommande;
 	}
 	
 	public double getqtesouhaite(){
@@ -22,13 +21,13 @@ public class AchatCacao {
 		return this.datecommande;
 	}
 	
-	public void setqte(double q){
-		this.qtesouhaite = q;
+	public void setqte(double qtesouhaite){
+		this.qtesouhaite = qtesouhaite;
 	}
 	
 
-	public void setdate(int d){
-		this.datecommande=d;
+	public void setdate(int datecommande){
+		this.datecommande=datecommande;
 	}
 	
 		
