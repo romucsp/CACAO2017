@@ -10,8 +10,6 @@ import java.util.ArrayList;
 public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	private int productionmoyenne; // Production moyenne de la cote d'ivoire
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
-	private int quantiteProduite; // ????
-	private int quantiteAchetable; // ????
 	private Stock stock; 
 	private Treso tresorerie;
 	
@@ -21,11 +19,9 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	}
 	
 	//Constructeur Production cote d'ivoire
-	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach, Stock stock){ 
+	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, Stock stock){ 
 		this.productionmoyenne=prodmoy;
 		this.productions = prods; 
-		this.quantiteProduite = qtprod; 
-		this.quantiteAchetable = qtach;
 		this.stock=stock;
 	}
 	
