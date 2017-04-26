@@ -3,22 +3,18 @@ public class TransfoChocolat {
 	
 	private StockMatPremiere premiere;
 	private StockProduitsFinis finis;
-	private double[] recette =new double[4];
+	public final static double[] recette = {0.6, 0.15, 0.2, 0.05};//pourcentage de matiere premiere pour realiser une unite de produit fini. new double[4];
 	
 	private double[] stocks=new double[4];
-	private int SUCRE =2;
-	private int CACAO =0;
-	private int LECITINE =3;
-	private int LAIT =1;
-
+	final static public int SUCRE =2;
+	final static public int CACAO =0;
+	final static public int LECITINE =3;
+	final static public int LAIT =1;
 	/*souchu*/
 	public TransfoChocolat( StockMatPremiere premiere,StockProduitsFinis finis){
 		this.finis=finis;
 		this.premiere=premiere;
-		recette[CACAO]=0.6;
-		recette[LAIT]=0.15;
-		recette[SUCRE]=0.2;
-		recette[LECITINE]=0.05;
+		
 		
 	}
 	
