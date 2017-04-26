@@ -3,11 +3,10 @@ import java.util.ArrayList;
 
 import abstraction.fourni.Acteur;
 import abstraction.transformateur.usa.interfacemarche.*;
-import abstraction.producteur.cotedivoire.*;
 //Souchu
 public class TransformateurUsa implements transformateur,Acteur{
-	private StockProduitsFinis finis = new StockProduitsFinis(200);
-	private StockMatPremiere premiere=new StockMatPremiere(1000000,1000000,1000000,1000000);
+	private StockProduitsFinis finis;
+	private StockMatPremiere premiere;
 	private TransfoChocolat Transfo=new TransfoChocolat(premiere,finis);
 	private Tresorerie tresorie=new Tresorerie(500000);
 	private int unitéventechocolat=100;
@@ -21,6 +20,8 @@ public class TransformateurUsa implements transformateur,Acteur{
 		prixmatprem.add(350);//Prix matière première à la tonne en euros.
 		prixmatprem.add(25);
 		prixmatprem.add(400);
+		finis = new StockProduitsFinis(200);
+		premiere =new StockMatPremiere(1000000,1000000,1000000,1000000);
 	}
 	
 	public void next(){
@@ -47,8 +48,8 @@ public class TransformateurUsa implements transformateur,Acteur{
 	}
 	
 	public double getprixMin(){
-		if (finis.getStockChocolat()<1*unitéventechocolat){
-			return 10000;
+		if (finis.getStockChocolat()<unitéventechocolat){
+			return bornesmax+1;
 		}
 		else if (finis.getStockChocolat()<200*unitéventechocolat){
 			double prix= bornesmax-((finis.getStockChocolat()-10*unitéventechocolat)/(190*unitéventechocolat)*(bornesmin-bornesmax));
@@ -74,14 +75,22 @@ public class TransformateurUsa implements transformateur,Acteur{
 		return "Transfo Usa";
 	}
 	
-	public void notificationAchat(double vendu, double prix){
+	public void notificationAchat(double achete, double prix){
 		this.tresorie.setCompteCourant(tresorie.getCompteCourant()-prix);
-		this.premiere.setCacao(premiere.getCacao()+vendu);
+		this.premiere.setCacao(premiere.getCacao()+achete);
 		
 	}
 	
 	public int hashCode() {
 		return this.getNom().hashCode();
+	}
+	
+	public void test(){
+		
+	}
+	
+	public void main(String[] arg){
+		
 	}
 	
 	
