@@ -8,19 +8,19 @@ import abstraction.fourni.v0.Transformateur;
 
 public class Stock{
 	
-	private int stock; 
+	private double stock; 
 	
-	public Stock(int stock){ 
+	public Stock(double stock){ 
 		this.stock= stock;  
 	}
 
 	//Accesseur permettant de connaitre la quantité dans le stock à l'origine 
-	public int getStock(){ 
+	public double getStock(){ 
 		return this.stock; 
 	}
 	
 	//Accesseur permettant de mettre à jour le stock après un next
-	public void setStock(int stock){ 
-		this.stock = stock; //A modifier en ajoutant la notification de vente
+	public void setStock(double stock){ 
+		this.stock += stock; //A modifier en ajoutant la notification de vente
 	}
 }

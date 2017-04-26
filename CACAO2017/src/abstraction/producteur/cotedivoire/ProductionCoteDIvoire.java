@@ -12,6 +12,8 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
 	private int quantiteProduite; // ????
 	private int quantiteAchetable; // ????
+	private Stock stock; 
+	private Treso tresorerie;
 	
 	//Cf marché
 	public int hashCode() {
@@ -19,11 +21,12 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	}
 	
 	//Constructeur Production cote d'ivoire
-	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach){ 
+	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach, Stock stock){ 
 		this.productionmoyenne=prodmoy;
 		this.productions = prods; 
 		this.quantiteProduite = qtprod; 
 		this.quantiteAchetable = qtach;
+		this.stock=stock;
 	}
 	
 	//Accesseur Production moyenne
@@ -71,13 +74,15 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 
 	@Override
 	public double quantiteMiseEnvente() {
-		// TODO Auto-generated method stub
-		return 0;
+		Stock s = this.stock;
+		s.setStock(this.getQuantiteProd());
+		return this.getQuantiteProd()+s.getStock();
 	}
 
 	@Override
 	public void notificationVente(double quantite, double coursActuel) {
-		// TODO Auto-generated method stub
+		this.tresorerie.setCa(quantite*coursActuel);
+		this.stock.setStock(this.getQuantiteMiseEnVente()-quantite);
 		
 	}
 	
