@@ -1,6 +1,7 @@
 package abstraction.producteur.ameriquelatine;
 //Modifié par lolotteisyoung 14/04/2017
 //Modifié par lolotteisyoung 24/04/2017
+//26/04 Adrien
 
 //import abstraction.fourni.Acteur;
 //import abstraction.fourni.Indicateur;
@@ -10,37 +11,31 @@ package abstraction.producteur.ameriquelatine;
 
 public class Tresorerie {
 //private double ca; //chiffres d'affaires de la période
-	public final static int CHARGESPROD=1000000;// ($) charges de production (hors coût de stock)
+	public final static int CHARGESPROD=100000;// ($) charges fixes (hors coût de stock)
 	public final static double COUTSTOCK=0.3;
-	private double resultat;
+	private double resultat; // ne sert à rien pour l'instant
 	private double tresorerie; // argent en banque
 	private Stock stock;
-	private Producteur producteur ;
 
 //Méthode qui renvoie un chiffre d'affaire;
 //Méthode qui calcule les charges totales;
 //Méthode qui actualise la trésorerie;
 //qté vendue et cours actuel depuis producteur;
 	
-	public Tresorerie(){
-		this.resultat=resultat;
-		this.tresorerie = tresorerie ;	
-		this.stock=stock;
-		this.producteur=producteur;
+	public Tresorerie(Stock stock){
+		this.stock = stock ;
+		this.tresorerie = 10000 ;
 	}
 
 	public double getTresorerie(){
 		 return this.tresorerie ;
 	}
 	
-	public double coût(Stock stock){
-		return CHARGESPROD + stock.getInitial()*COUTSTOCK;
+	public double coût(){
+		return CHARGESPROD + stock.getInitial()*COUTSTOCK; //on ppaye le cout du stock le mois d'après !!!
 	}
-
-
 	
-//Actualisation trésorerie
-//	private void setTresorerie(int tresorerie){
-//		this.tresorerie = setTresorerie(tresorerie)+0.2 ;
-	
+	public void setTresorerie(double tresorerie){
+		this.tresorerie = tresorerie ;
+	}
 }
