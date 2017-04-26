@@ -1,7 +1,7 @@
 package abstraction.producteur.ameriquelatine;
 //Modifié par lolotteisyoung 14/04/2017
 //Modifié par lolotteisyoung 24/04/2017
-
+//26/04 Adrien
 
 //import abstraction.fourni.Acteur;
 //import abstraction.fourni.Indicateur;
