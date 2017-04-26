@@ -6,10 +6,10 @@ public class Stock {
 	private double stockchocolat;
 	private double stockMax;
 	
-	public Stock(double stockcacao,double stockchocolat, double stockMax){
-		this.stockcacao=stockcacao;
-		this.stockchocolat=stockchocolat;
-		this.stockMax=stockMax;
+	public Stock(){
+		this.stockcacao=10;
+		this.stockchocolat=10;
+		this.stockMax=100;
 	}
 	
 	public double getstockcacao(){
@@ -24,17 +24,16 @@ public class Stock {
 		return this.stockMax;
 	}
 	
-	public void setstockcacao(double stockcacao){
-		this.stockcacao=stockcacao;
+	public void setstockcacao(double cacao){
+		this.stockcacao=this.getstockcacao()+cacao;
 	}
 	
-	public void setstockchocolat(double stockchocolat){
-		this.stockchocolat=stockchocolat;
+	public void setstockchocolat(double choco){
+		this.stockchocolat=this.getstockchocolat()+choco;
 	}
 	
 	public String toString(){
 		return "stock de cacao: "+this.stockcacao+"   stock de chocolat: "+this.stockchocolat;
 	}
-	
 	
 }
