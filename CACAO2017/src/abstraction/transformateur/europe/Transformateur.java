@@ -27,6 +27,11 @@ public class Transformateur implements transformateur  {
 		return stockMax-stockCacao; //test
 		
 	}
+	
+	public void notificationAchat(double prix, double quantite){
+		this.s.setstockcacao(this.s.getstockcacao()+quantite);
+		double benef=prix*quantite;
+	}
 		
 	
 }
