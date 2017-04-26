@@ -68,14 +68,12 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 		// TODO Auto-generated method stub
 	}
 
-	@Override
 	public double quantiteMiseEnvente() {
 		Stock s = this.stock;
 		s.setStock(this.getQuantiteProd());
 		return this.getQuantiteProd()+s.getStock();
 	}
 
-	@Override
 	public void notificationVente(double quantite, double coursActuel) {
 		this.tresorerie.setCa(quantite*coursActuel);
 		this.stock.setStock(this.getQuantiteMiseEnVente()-quantite);
