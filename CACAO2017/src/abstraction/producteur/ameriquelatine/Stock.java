@@ -18,7 +18,7 @@ public class Stock {
 	
 	public void setGestionVente(GestionVentes vente){
 		this.vente=vente;
-	}
+	} // Pq modifier gestion Vente?
 	
 	public void miseAJourStock() {
 		this.initial=(int)(this.initial+recolte.getQterecoltee()-this.vente.getQuantiteVendue());

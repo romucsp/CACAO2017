@@ -15,7 +15,7 @@ public class Recolte {
 	}
 
 	public void miseAJourIndice() {
-		this.indiceRecolte=Math.random()*0.1+0.9 ;
+		this.indiceRecolte=Math.random()*0.1+0.9 ; // *0.1+0.9???
 	}
 	
 	
