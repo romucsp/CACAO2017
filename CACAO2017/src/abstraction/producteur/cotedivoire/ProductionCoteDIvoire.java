@@ -5,7 +5,7 @@ import abstraction.producteur.ameriquelatine.IProducteur;
 
 import java.util.ArrayList; 
 
-// modifié by fcadre, comments by antoineroson
+// by fcadre, comments by antoineroson
 
 public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	private int productionmoyenne; // Production moyenne de la cote d'ivoire
@@ -21,11 +21,9 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	}
 	
 	//Constructeur Production cote d'ivoire
-	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach, Stock stock){ 
+	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, Stock stock){ 
 		this.productionmoyenne=prodmoy;
 		this.productions = prods; 
-		this.quantiteProduite = qtprod; 
-		this.quantiteAchetable = qtach;
 		this.stock=stock;
 	}
 	
@@ -72,14 +70,13 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 		// TODO Auto-generated method stub
 	}
 
-	@Override
 	public double quantiteMiseEnvente() {   // correspond a la quantité mise en vente//
 		Stock s = this.stock;              // qui vaut le stock + la quantite produite//
 		s.setStock(this.getQuantiteProd());
 		return this.getQuantiteProd()+s.getStock();
 	}
 
-	@Override
+
 	public void notificationVente(double quantite, double coursActuel) {    // grace a la notification de vente on met a jour // 
 		this.tresorerie.setCa(quantite*coursActuel);                       // notre tresorerie et notre stock //
 		this.stock.setStock(this.getQuantiteMiseEnVente()-quantite);
