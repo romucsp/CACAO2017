@@ -7,6 +7,12 @@ public class Transformateur implements transformateur  {
 	private Stock s;
 	private Tresorerie compte;
 	
+	
+	public Transformateur (Stock s){
+		this.s=s;
+	}
+	
+	
 	public double getprixMin() {
 		double a = 1000*Math.random();
 		double prixmin = 4000;
@@ -30,13 +36,12 @@ public class Transformateur implements transformateur  {
 	public int hashCode() {
 		return this.getNom().hashCode();
 	}
+	
 	public String getNom() {
 		return "Producteur "+this.nom;
 	}
 	
-	public void EchangesProducteurs(Stock s){
-		this.s=s;
-	}
+	
 
 	public Stock getStock(){
 		return this.s;
@@ -51,7 +56,8 @@ public class Transformateur implements transformateur  {
 	
 	public void notificationAchat(double prix, double quantite){
 		this.s.setstockcacao(this.s.getstockcacao()+quantite);
-		double benef=prix*quantite;
+		double achat = prix*quantite;
+		this.compte.retraitAchat(achat);
 	}
 		
 	
