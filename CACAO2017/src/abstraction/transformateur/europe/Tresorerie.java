@@ -24,7 +24,7 @@ public class Tresorerie {
 		this.setCompte(chiffre_daffaire+this.compte);
 	}
 	
-	public void retraitVente(double vente){
-		this.setCompte(-vente+ this.compte);
+	public void retraitAchat(double achat){
+		this.setCompte(-achat+ this.compte);
 	}
 }
