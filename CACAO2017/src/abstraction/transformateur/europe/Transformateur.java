@@ -6,7 +6,7 @@ public class Transformateur implements transformateur  {
 	private String nom;
 	private Stock s;
 	private Tresorerie compte;
-	
+	private double prixmin=4000;
 	
 	public Transformateur (Stock s){
 		this.s=s;
@@ -15,13 +15,13 @@ public class Transformateur implements transformateur  {
 	
 	public double getprixMin() {
 		double a = 1000*Math.random();
-		double prixmin = 4000;
 		double stockchocolat=this.s.getstockchocolat();
 		if (stockchocolat<100){
 			return 10000;
 		}
 		else{
-			return prixmin+a;
+			this.prixmin+=a;
+			return this.prixmin;
 		}
 		// TODO Auto-generated method stub
 	}
