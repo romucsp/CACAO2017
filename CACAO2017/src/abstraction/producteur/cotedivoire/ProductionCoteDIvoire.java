@@ -5,7 +5,7 @@ import abstraction.producteur.ameriquelatine.IProducteur;
 
 import java.util.ArrayList; 
 
-// modifié by fcadre, comments by antoineroson
+// by fcadre, comments by antoineroson
 
 public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	private int productionmoyenne; // Production moyenne de la cote d'ivoire
