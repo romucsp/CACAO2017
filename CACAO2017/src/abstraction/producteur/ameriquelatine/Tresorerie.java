@@ -1,5 +1,6 @@
 package abstraction.producteur.ameriquelatine;
-//Modifié par lolotteisyoung
+//Modifié par lolotteisyoung 14/04/2017
+//Modifié par lolotteisyoung 24/04/2017
 
 //import abstraction.fourni.Acteur;
 //import abstraction.fourni.Indicateur;
@@ -8,47 +9,38 @@ package abstraction.producteur.ameriquelatine;
 
 
 public class Tresorerie {
-	private double ca; //chiffres d'affaires de la periode
-	private double charges; // charges de production
+//private double ca; //chiffres d'affaires de la période
+	public final static int CHARGESPROD=1000000;// ($) charges de production (hors coût de stock)
+	public final static double COUTSTOCK=0.3;
+	private double resultat;
 	private double tresorerie; // argent en banque
-	private double resultat; // resultat = ca - charges
-	private double coursActuel; // prix $ par tonne du cacao de la periode
-	private Producteur producteur;
-	private double qtevendue;
+	private Stock stock;
+	private Producteur producteur ;
+
+//Méthode qui renvoie un chiffre d'affaire;
+//Méthode qui calcule les charges totales;
+//Méthode qui actualise la trésorerie;
+//qté vendue et cours actuel depuis producteur;
 	
-	public Tresorerie(double charges, double tresorerie, double ca, double qtevendue){
-		this.ca= ca;
-		this.charges = charges ;
+	public Tresorerie(){
+		this.resultat=resultat;
 		this.tresorerie = tresorerie ;	
-		this.resultat=ca-charges;
+		this.stock=stock;
+		this.producteur=producteur;
 	}
-	
-	 public double getCa(){
-		 return this.ca ;
-	 }
-	 public double getCharges(){
-		 return this.charges ;
-	 }
-	 public double getTresorerie(){
+
+	public double getTresorerie(){
 		 return this.tresorerie ;
-	 }
-
-	public void setCa( int ca) {
-		
-	}
-	public void setCharges(int charges){
-		this.charges = charges ;
-	}
-	public void setTresorerie(int tresorerie){
-		this.tresorerie = tresorerie ;
-	}
-
-	public void setCoursActuel(double coursActuel){
-		this.coursActuel=coursActuel;
 	}
 	
-	public void next(){
-//		this.ca = 		
+	public double coût(Stock stock){
+		return CHARGESPROD + stock.getInitial()*COUTSTOCK;
 	}
+
+
+	
+//Actualisation trésorerie
+//	private void setTresorerie(int tresorerie){
+//		this.tresorerie = setTresorerie(tresorerie)+0.2 ;
 	
 }

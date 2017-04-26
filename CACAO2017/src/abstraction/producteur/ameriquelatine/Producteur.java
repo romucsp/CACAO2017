@@ -1,24 +1,26 @@
 
 package abstraction.producteur.ameriquelatine;
 
-
+import abstraction.fourni.Monde;
+import abstraction.fourni.v0.Constantes;
 
 public class Producteur implements IProducteur {
-	private String nom;
-	private Stock stock;
-	private int qtemiseenvente;
+	public String nom;
+	private GestionVentes ventes;
+	private Tresorerie treso;
+	private double qtemiseenvente;
 	private double coursActuel;
 	private double qtevendue;
 	
-	public Producteur(Stock stock){
-		this.nom="Amerique Latine";
-		this.qtemiseenvente=12;
-		
-	
+	public Producteur(String nom, GestionVentes ventes){
+		this.nom=nom;
+		this.ventes=ventes;
+		this.qtemiseenvente=ventes.quantiteMiseEnVente();
 
 	}
+	
 	public String getNom(){
-		return this.nom ;
+		return this.nom;
 	}
 	
 	public int hashCode() {
@@ -35,19 +37,24 @@ public class Producteur implements IProducteur {
 	public double getQteVendue(){
 		return this.qtevendue;
 	}
-	
+
+	public void setQtemiseenvente(double qte){
+		this.qtemiseenvente=qte ;
+	}
 
 	public void notificationVente(double quantite, double coursActuel) {
-		this.setQtevendue(quantite);
+		//this.Treso.setTresorerie(this.Treso.getTresorerie()+coursActuel*quantite);
 		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
+		this.ventes.setQuantiteVendue(quantite);
 			
 	}
 	@Override
 	public double quantiteMiseEnvente() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.qtemiseenvente;
 	}
-
 	
-
+	public void next() {
+		double Avendre = 100 ;
+		setQtemiseenvente(Avendre) ;
+	}
 }
