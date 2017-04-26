@@ -1,8 +1,7 @@
 //Classe codée par Walid
 package abstraction.distributeur.europe;
-import java.util.*;
+import java.util.ArrayList;
 
-import abstraction.distributeur.europe.Stock.Chocolats;
 
 class QuantiteChoco {
 	private Chocolats typeChoco;
@@ -25,13 +24,9 @@ class QuantiteChoco {
 	private int quantite;
 	
 }
+
 public class Stock {
-	
-	public enum Chocolats{
-		Chocolat_au_lait,
-		Chocolat_blanc,
-		Chocolat_noir,
-	}
+
 	
 	private ArrayList<QuantiteChoco> stock;
 	

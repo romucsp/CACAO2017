@@ -17,9 +17,15 @@ public class MondeV1 extends Monde {
 	
 	public void peupler(){
 		
-		Distributeur dEuropeen = new Distributeur(new Vente(70000000,1), 13, 13);
+		ArrayList<QuantiteChoco> stock = new ArrayList<QuantiteChoco>();
+		stock.add(new QuantiteChoco(new Chocolats("chocolat_noir"),13));
+		
+		Distributeur dEuropeen = new Distributeur(new Vente(70000000,1), Stock stock, 13);
+		DistributeurUS dUS = new DistribiteurUS(new Treso(5000000000,625000,new Demande(1)));
 		
 		distributeurs.add(dEuropeen);
+		distributeurs.add(dUS);
+		
 		
 		TransformateurUsa tUsa = new TransformateurUsa();
 		
