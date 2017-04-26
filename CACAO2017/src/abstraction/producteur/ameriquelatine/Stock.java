@@ -10,11 +10,16 @@ public class Stock {
 	private GestionVentes vente;
 	
 
-	public Stock() {
+	public Stock(Recolte recolte) {
 		this.initial=1000;
+		this.recolte=recolte ;
 	}
 	
-	public void miseAJourStock(Recolte recolte) {
+	public void setGestionVente(GestionVentes vente){
+		this.vente=vente;
+	}
+	
+	public void miseAJourStock() {
 		this.initial=(int)(this.initial+recolte.getQterecoltee()-this.vente.getQuantiteVendue());
 	}
 	public int stockintermediaire(){

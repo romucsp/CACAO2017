@@ -6,11 +6,12 @@ public class GestionVentes {
 	private Stock stock;
 	private double quantiteVendue;
 	
-	public GestionVentes(){
+	public GestionVentes(Stock stock){
+		this.stock=stock;
 		this.quantiteVendue=0;
 	}
 	
-	public int quantiteMiseEnVente(){
+	public int getQuantiteMiseEnVente(){
 		return (int)(0.8*stock.stockintermediaire());
 	}
 	

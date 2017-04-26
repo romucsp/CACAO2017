@@ -8,15 +8,15 @@ public class Producteur implements IProducteur {
 	public String nom;
 	private GestionVentes ventes;
 	private Tresorerie treso;
-	private double qtemiseenvente;
 	private double coursActuel;
 	private double qtevendue;
+	private Stock stock ;
+	private Recolte recolte ;
 	
-	public Producteur(String nom, GestionVentes ventes){
-		this.nom=nom;
-		this.ventes=ventes;
-		this.qtemiseenvente=ventes.quantiteMiseEnVente();
-
+	public Producteur(){
+		this.nom="Producteur Amerique";
+		this.ventes=new GestionVentes(stock);
+		this.recolte=new Recolte(0.5) ;
 	}
 	
 	public String getNom(){
@@ -38,23 +38,19 @@ public class Producteur implements IProducteur {
 		return this.qtevendue;
 	}
 
-	public void setQtemiseenvente(double qte){
-		this.qtemiseenvente=qte ;
-	}
 
 	public void notificationVente(double quantite, double coursActuel) {
-		//this.Treso.setTresorerie(this.Treso.getTresorerie()+coursActuel*quantite);
-		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
+		this.treso.setTresorerie(this.treso.getTresorerie()+coursActuel*quantite);
+		this.setCoursActuel(coursActuel);
 		this.ventes.setQuantiteVendue(quantite);
-			
 	}
-	@Override
+	
 	public double quantiteMiseEnvente() {
-		return this.qtemiseenvente;
+		return this.ventes.getQuantiteMiseEnVente();
 	}
 	
 	public void next() {
-		double Avendre = 100 ;
-		setQtemiseenvente(Avendre) ;
+		stock.miseAJourStock() ;
+		recolte.miseAJourIndice();
 	}
 }
