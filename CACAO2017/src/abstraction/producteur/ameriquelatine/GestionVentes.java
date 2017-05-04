@@ -1,16 +1,18 @@
 package abstraction.producteur.ameriquelatine;
 //modifié et créé par lolotteisyoung 14/04/2017
+//24/06 Adrien
 
 public class GestionVentes {
-// renvoie les ventes
+
 	private Stock stock;
 	private double quantiteVendue;
 	
-	public GestionVentes(){
+	public GestionVentes(Stock stock){
+		this.stock=stock;
 		this.quantiteVendue=0;
 	}
 	
-	public int quantiteMiseEnVente(){
+	public int getQuantiteMiseEnVente(){
 		return (int)(0.8*stock.stockintermediaire());
 	}
 	
