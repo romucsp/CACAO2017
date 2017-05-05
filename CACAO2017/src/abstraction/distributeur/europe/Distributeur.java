@@ -58,15 +58,13 @@ public class Distributeur implements Acteur,IDistributeur{
 	
 	public void notif(Vente vente){
 		this.setVente(vente);
-<<<<<<< HEAD
 		this.setStock(this.getStock()+vente.getQuantite());
-=======
 		List nouveauStock = new ArrayList<QuantiteChoco>();
 		for (int i=0; i<this.getStock().getStock().size(); i++){
 			
 		}
 		this.setStock(this.getStock().nbChoco()-vente.getQuantite());
->>>>>>> origin/master
+
 	}
 	
 	public void next(){}
