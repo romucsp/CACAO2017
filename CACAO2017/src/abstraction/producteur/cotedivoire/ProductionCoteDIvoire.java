@@ -1,16 +1,19 @@
 package abstraction.producteur.cotedivoire;
 
 import abstraction.fourni.Acteur;
-import abstraction.fourni.v0.IProducteur;
+import abstraction.producteur.ameriquelatine.IProducteur;
+
 import java.util.ArrayList; 
 
-// modifié by fcadre, comments by antoineroson
+// by fcadre, comments by antoineroson
 
-public class ProductionCoteDIvoire implements Production{
+public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	private int productionmoyenne; // Production moyenne de la cote d'ivoire
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
 	private int quantiteProduite; // ????
 	private int quantiteAchetable; // ????
+	private Stock stock;          // Represente notre stock 
+	private Treso tresorerie;     // Représente notre trésorerie
 	
 	//Cf marché
 	public int hashCode() {
@@ -18,11 +21,10 @@ public class ProductionCoteDIvoire implements Production{
 	}
 	
 	//Constructeur Production cote d'ivoire
-	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, int qtprod, int qtach){ 
+	public ProductionCoteDIvoire(int prodmoy, ArrayList<Integer> prods, Stock stock){ 
 		this.productionmoyenne=prodmoy;
 		this.productions = prods; 
-		this.quantiteProduite = qtprod; 
-		this.quantiteAchetable = qtach;
+		this.stock=stock;
 	}
 	
 	//Accesseur Production moyenne
@@ -37,11 +39,12 @@ public class ProductionCoteDIvoire implements Production{
 	
 	//Accesseur quantité produite
 	public int getQuantiteProd(){ 
-		return this.getProductions().get(this.productions.size());   // Récupére la dernière production sur la période
+		return this.getProductions().get(this.productions.size());   
+		// Récupére la dernière production sur la période
 	}
 	
 	//Accesseur Quantité Achetable
-	public int getQuantiteAch(){ 
+	public int getQuantiteMiseEnVente(){ 
 		return this.getQuantiteProd(); //V1: Quantité achetable = Quantité produite
 		/// A voir pour le stock ....!
 	}
@@ -65,6 +68,19 @@ public class ProductionCoteDIvoire implements Production{
 	
 	public void next() {
 		// TODO Auto-generated method stub
+	}
+
+	public double quantiteMiseEnvente() {   // correspond a la quantité mise en vente//
+		Stock s = this.stock;              // qui vaut le stock + la quantite produite//
+		s.setStock(this.getQuantiteProd());
+		return this.getQuantiteProd()+s.getStock();
+	}
+
+
+	public void notificationVente(double quantite, double coursActuel) {    // grace a la notification de vente on met a jour // 
+		this.tresorerie.setCa(quantite*coursActuel);                       // notre tresorerie et notre stock //
+		this.stock.setStock(this.getQuantiteMiseEnVente()-quantite);
+		
 	}
 	
 }
