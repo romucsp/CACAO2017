@@ -13,5 +13,15 @@ public class Test {
 		marche.Bourse();
 		System.out.println(marche.getCoursActuel());
 		
+		ProductionCoteDIvoire prod= new ProductionCoteDIvoire(); 
+		prod.variationProduction();
+		System.out.println(prod.getProductions());
+		System.out.println(prod.getQuantiteProd());
+		prod.variationProduction();
+		System.out.println(prod.getProductions());
+		System.out.println(prod.getQuantiteProd());
+		prod.variationProduction();
+		System.out.println(prod.getProductions());
+		System.out.println(prod.getQuantiteProd());
 	}
 }

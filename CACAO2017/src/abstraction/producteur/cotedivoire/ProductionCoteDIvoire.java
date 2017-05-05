@@ -42,7 +42,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	
 	//Accesseur quantité produite
 	public int getQuantiteProd(){ 
-		return this.getProductions().get(this.productions.size());   
+		return this.getProductions().get(this.productions.size()-1);   
 		// Récupére la dernière production sur la période
 	}
 
@@ -50,10 +50,10 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	public void variationProduction(){
 		double variation = 0.10;  //Variation de +- 10% 
 		//Création d'une enveloppe (prod_min->prod_max)
-		int prod_min = this.getProductionmoyenne() - (int)(this.getProductionmoyenne()*variation); 
-		int prod_max = this.getProductionmoyenne() + (int)(this.getProductionmoyenne()*variation);
-		int prod = prod_min + (int)Math.random()*(prod_max - prod_min); // Production random entre prod_min et prod_max
-		productions.add(prod); // ajout dans la liste de production
+		double prod_min = this.getProductionmoyenne() - (double)(this.getProductionmoyenne()*variation); 
+		double prod_max = this.getProductionmoyenne() + (double)(this.getProductionmoyenne()*variation);
+		double prod = prod_min + (double)Math.random()*(prod_max - prod_min); // Production random entre prod_min et prod_max
+		productions.add((int)prod); // ajout dans la liste de production
 		this.stock.addStock(prod);
 	}
 	
