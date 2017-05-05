@@ -16,6 +16,11 @@ public class Distributeur implements Acteur,IDistributeur{
 		this.qteDemandee = qteDemandee;
 	}
 	
+	public Distributeur(){
+		this.derniereVente = new Vente(1000,1000);
+		this.stock = 1000;
+		this.qteDemandee = 100;
+	}
 	
 	public double getStock() {
 		return this.stock;
