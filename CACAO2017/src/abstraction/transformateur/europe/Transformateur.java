@@ -56,7 +56,7 @@ public class Transformateur implements transformateur  {
 	public void notificationAchat(double prix, double quantite){
 		this.s.setstockcacao(this.s.getstockcacao()+quantite);
 		double achat = prix*quantite;
-		this.compte.retraitVente(achat);
+		this.compte.retraitAchat(achat);
 	}
 		
 	
