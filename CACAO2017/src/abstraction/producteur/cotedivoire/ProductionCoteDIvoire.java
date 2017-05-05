@@ -59,7 +59,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	}
 
 	public double quantiteMiseEnvente() {   // correspond a la quantité mise en vente//
-		return this.getQuantiteProd()+this.stock.getStock();  
+		return this.getQuantiteProd()+this.stock.getStock(); 
 	}
 
 
