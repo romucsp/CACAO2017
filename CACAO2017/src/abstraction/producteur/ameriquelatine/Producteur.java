@@ -4,6 +4,7 @@ package abstraction.producteur.ameriquelatine;
 
 import abstraction.fourni.Monde;
 import abstraction.fourni.Acteur;
+import abstraction.fourni.Indicateur;
 
 public class Producteur implements IProducteur, Acteur {
 	public String nom;
@@ -13,13 +14,16 @@ public class Producteur implements IProducteur, Acteur {
 	private double qtevendue;
 	private Stock stock ;
 	private Recolte recolte ;
+//	private Indicateur quantiteVendue;
+	//private Indicateur solde;
 	
 	public Producteur(){
 		this.nom="Producteur AmeriqueLatine" ;
 		this.recolte=new Recolte(0.8) ;
 		this.stock=new Stock(recolte) ;
 		this.ventes=new GestionVentes(stock) ;
-		stock.setGestionVente(ventes) ; 
+		stock.setGestionVente(ventes) ;
+		//this.quantiteVendue=new Indicateur("Quantite de feves vendues de"+this.nom, this, qtevendue);
 	}
 	
 	public String getNom(){
