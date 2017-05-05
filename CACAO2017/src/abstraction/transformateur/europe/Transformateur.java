@@ -38,9 +38,8 @@ public class Transformateur implements transformateur  {
 	}
 	
 	public String getNom() {
-		return "Producteur "+this.nom;
+		return "Transformateur "+this.nom;
 	}
-	
 	
 
 	public Stock getStock(){

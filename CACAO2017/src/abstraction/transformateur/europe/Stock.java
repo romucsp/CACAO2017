@@ -33,7 +33,7 @@ public class Stock {
 	}
 	
 	public String toString(){
-		return "stock de cacao: "+this.stockcacao+"   stock de chocolat: "+this.stockchocolat;
+		return "Le stock de cacao est de: "+this.stockcacao+", celui de chocolat est de: "+this.stockchocolat;
 	}
 	
 }

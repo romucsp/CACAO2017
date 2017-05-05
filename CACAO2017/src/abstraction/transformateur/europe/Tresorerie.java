@@ -21,10 +21,10 @@ public class Tresorerie {
 	}
 	
 	public void ajoutChiffredaffaire(double chiffre_daffaire){
-		this.setCompte(chiffre_daffaire+this.compte);
+		this.setCompte(chiffre_daffaire+this.getCompte());
 	}
 	
 	public void retraitAchat(double achat){
-		this.setCompte(-achat+ this.compte);
+		this.setCompte(this.getCompte()-achat);
 	}
 }
