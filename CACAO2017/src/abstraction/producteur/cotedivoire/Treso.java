@@ -20,6 +20,14 @@ public class Treso {
 		this.coutmaindoeuvre = cmdo; 
 		this.benefice = benef; 
 	}
+	public Treso(){
+		this.stock = new Stock (0); 
+		this.ca = 0; 
+		this.coutdeprod = 0; 
+		this.coutacheminement = 0;
+		this.coutmaindoeuvre = 0; 
+		this.benefice = 0; 
+	}
 	public int getStock(){ 
 		return this.getStock(); 
 	}
