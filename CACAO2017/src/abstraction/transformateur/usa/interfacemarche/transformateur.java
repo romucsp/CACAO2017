@@ -7,7 +7,7 @@ public interface transformateur {
 	
 	public double QteSouhaite();
 	
-	public void notificationAchat(double vendu, double prix);
+	public void notificationAchat(double quantite, double prix);
 	
 	
 	public int hashCode();
