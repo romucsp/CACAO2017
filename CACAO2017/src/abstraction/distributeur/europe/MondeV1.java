@@ -17,11 +17,11 @@ public class MondeV1 extends Monde {
 	
 
 	public void peupler(){
-		Producteur p1 = new Producteur();
-		Producteur p2 = new Producteur();
+		Producteur pAmeriqueLatine = new Producteur();
+		//Producteur p2 = new Producteur();
 		
-		this.ajouterActeur(p1);
-		this.ajouterActeur(p2);
+		//this.ajouterActeur(p1);
+		//this.ajouterActeur(p2);
 		
 		TransformateurUsa t1 = new TransformateurUsa();
 		//TransformateurUsa t2 = new TransformateurUsa();
@@ -30,8 +30,8 @@ public class MondeV1 extends Monde {
 		//this.ajouterActeur(t2);
 		
 		MarcheProd Marche = new MarcheProd();
-		Marche.addProducteur(p1);
-		Marche.addProducteur(p2);
+		Marche.addProducteur(pAmeriqueLatine);
+		//Marche.addProducteur(p2);
 		Marche.addTransformateur(t1);
 		//Marche.addTransformateur(t2);
 		
