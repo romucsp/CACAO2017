@@ -59,7 +59,7 @@ public class Marche implements Acteur{
 		return indice_min;		
 	}
 	
-	public void next(){
+	public void Echanges(){
 		
 	
        // Définition des tests vérifiant si la boucle doit s'arrêter ou non 
@@ -111,6 +111,9 @@ public class Marche implements Acteur{
 			distributeur.get(autreDistri).notif(new Vente(prix, 0));
 			transformateur.get(prioTransfo).notificationAchat(unite, prix);
 			transformateur.get(autreTransfo).notificationAchat(0, prix);
+			distributeur.get(prioDistri).getAchats().setValeur(distributeur.get(prioDistri), prix*unite);
+			distributeur.get(autreDistri).getAchats().setValeur(distributeur.get(prioDistri), prix*unite);
+			
 			
 			
 		}
@@ -118,6 +121,10 @@ public class Marche implements Acteur{
 	@Override
 	public String getNom() {
 		return "Marche Distributeur / Transformateur";
+	}
+	
+	public void next(){
+		this.Echanges();
 	}
 
 	
