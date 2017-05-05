@@ -68,7 +68,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 
 
 	public void notificationVente(double quantite, double coursActuel) {	// grace a la notification de vente on met a jour // 
-		this.tresorerie.setCa(quantite*coursActuel);                       // notre tresorerie et notre stock //
+		this.tresorerie.addCa(quantite*coursActuel);                       // notre tresorerie et notre stock //
 		this.stock.addStock(-quantite);	
 	}
 	

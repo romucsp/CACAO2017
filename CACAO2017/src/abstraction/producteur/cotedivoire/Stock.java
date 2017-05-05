@@ -1,8 +1,5 @@
 package abstraction.producteur.cotedivoire;
 
-import java.util.ArrayList;
-import abstraction.fourni.v0.Producteur;
-import abstraction.fourni.v0.Transformateur; 
 
 // by fcadre 
 
