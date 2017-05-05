@@ -3,29 +3,30 @@ public class TransfoChocolat {
 	
 	private StockMatPremiere premiere;
 	private StockProduitsFinis finis;
-	private double[] recette =new double[4];
-	private double[] demande=new double[4];
+	public final static double[] recette = {0.6, 0.15, 0.2, 0.05};//pourcentage de matiere premiere pour realiser une unite de produit fini. new double[4];
+	
 	private double[] stocks=new double[4];
-
+	final static public int SUCRE =2;
+	final static public int CACAO =0;
+	final static public int LECITINE =3;
+	final static public int LAIT =1;
 	/*souchu*/
 	public TransfoChocolat( StockMatPremiere premiere,StockProduitsFinis finis){
 		this.finis=finis;
 		this.premiere=premiere;
-		recette[0]=0.6;
-		recette[1]=0.15;
-		recette[2]=0.2;
-		recette[3]=0.05;
+		
 		
 	}
 	
 	private void lireStock(){
-		stocks[0]=premiere.getCacao();
-		stocks[1]=premiere.getLait();
-		stocks[2]=premiere.getSucre();
-		stocks[3]=premiere.getLecitine();
+		stocks[CACAO]=premiere.getCacao();
+		stocks[LAIT]=premiere.getLait();
+		stocks[SUCRE]=premiere.getSucre();
+		stocks[LECITINE]=premiere.getLecitine();
 	}
 	
 	public void produireChoco(double quantité){	
+		double[] demande=new double[4];
 		lireStock();
 		boolean suffisant=true;
 		double maxmanque=0;

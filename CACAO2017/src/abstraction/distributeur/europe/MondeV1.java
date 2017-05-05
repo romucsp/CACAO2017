@@ -37,6 +37,7 @@ public class MondeV1 extends Monde {
 																				  *et transformateur*/
 		
 		
+		IProducteur p1 = new IProducteur();
 	}
 	
 	

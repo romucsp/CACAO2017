@@ -1,24 +1,29 @@
 
 package abstraction.producteur.ameriquelatine;
+//26/04 Adrien
 
-
+import abstraction.fourni.Monde;
+import abstraction.fourni.v0.Constantes;
 
 public class Producteur implements IProducteur {
-	private String nom;
-	private Stock stock;
-	private int qtemiseenvente;
+	public String nom;
+	private GestionVentes ventes;
+	private Tresorerie treso;
 	private double coursActuel;
 	private double qtevendue;
+	private Stock stock ;
+	private Recolte recolte ;
 	
-	public Producteur(Stock stock){
-		this.nom="Amerique Latine";
-		this.qtemiseenvente=12;
-		
-	
-
+	public Producteur(){
+		this.nom="Producteur AmeriqueLatine" ;
+		this.recolte=new Recolte(0.8) ;
+		this.stock=new Stock(recolte) ;
+		this.ventes=new GestionVentes(stock) ;
+		stock.setGestionVente(ventes) ; // Pq? 
 	}
+	
 	public String getNom(){
-		return this.nom ;
+		return this.nom;
 	}
 	
 	public int hashCode() {
@@ -35,19 +40,20 @@ public class Producteur implements IProducteur {
 	public double getQteVendue(){
 		return this.qtevendue;
 	}
-	
+
 
 	public void notificationVente(double quantite, double coursActuel) {
-		this.setQtevendue(quantite);
-		this.setCoursActuel(coursActuel);// TODO Auto-generated method stub
-			
+		this.treso.setTresorerie(this.treso.getTresorerie()+coursActuel*quantite);
+		this.setCoursActuel(coursActuel);
+		this.ventes.setQuantiteVendue(quantite);
 	}
-	@Override
-	public double quantiteMiseEnvente() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	
-
+	public double quantiteMiseEnvente() {
+		return this.ventes.getQuantiteMiseEnVente();
+	}
+	
+	public void next() {
+		stock.miseAJourStock() ; //mise à jour du stock
+		recolte.miseAJourIndice(); //mise à jour de l'indice de recolte
+	}
 }
