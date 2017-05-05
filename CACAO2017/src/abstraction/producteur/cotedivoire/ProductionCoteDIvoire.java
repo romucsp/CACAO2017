@@ -8,7 +8,7 @@ import abstraction.producteur.ameriquelatine.IProducteur;
 
 public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	public static final int  productionmoyenne = 1650000; // Production moyenne de la cote d'ivoire en tonnes
-	private int  productions; //Liste des productions par périodes
+	private int  production; //Liste des productions par périodes
 	private Stock stock;          // Represente notre stock 
 	private Treso tresorerie;     // Représente notre trésorerie
 	
@@ -19,12 +19,12 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	
 	//Constructeur Production cote d'ivoire
 	public ProductionCoteDIvoire(int prods, Stock stock, Treso treso){ 
-		this.productions = prods; 
+		this.production = prods; 
 		this.stock=stock;
 		this.tresorerie = treso; 
 	}
 	public ProductionCoteDIvoire() {
-		this.productions = 0;
+		this.production = 0;
 		this.stock= new Stock(0);
 		this.tresorerie= new Treso();
 	}
@@ -36,7 +36,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	
 	//Accesseur liste de production
 	public int getProductions(){
-		return this.productions; 
+		return this.production; 
 	}
 	
 	//Accesseur quantité produite
@@ -52,7 +52,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 		double prod_min = this.getProductionmoyenne() - (double)(this.getProductionmoyenne()*variation); 
 		double prod_max = this.getProductionmoyenne() + (double)(this.getProductionmoyenne()*variation);
 		double prod = prod_min + (double)Math.random()*(prod_max - prod_min); // Production random entre prod_min et prod_max
-		productions=(int)prod; // ajout dans la liste de production
+		production=(int)prod; // ajout dans la liste de production
 		this.stock.addStock(prod);
 	}
 	
