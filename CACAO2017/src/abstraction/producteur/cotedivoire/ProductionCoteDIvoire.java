@@ -8,7 +8,7 @@ import java.util.ArrayList;
 // by fcadre, comments by antoineroson
 
 public class ProductionCoteDIvoire implements Acteur, IProducteur{
-	private int productionmoyenne; // Production moyenne de la cote d'ivoire
+	private int productionmoyenne = 1650000; // Production moyenne de la cote d'ivoire en tonnes
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
 	private Stock stock;          // Represente notre stock 
 	private Treso tresorerie;     // Représente notre trésorerie
