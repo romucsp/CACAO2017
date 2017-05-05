@@ -7,22 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 public class Distributeur implements Acteur,IDistributeur{
 	private Vente derniereVente; // derniere vente effectuee sur le marche
-	private Stock stock;
+	private double stock;
 	private double qteDemandee;
 	
-	public Distributeur(Vente vente, Stock stock, double qteDemandee){ // penser à redocoder en enlevant les arguments du constructeur
+	public Distributeur(Vente vente, double stock, double qteDemandee){ // penser à redocoder en enlevant les arguments du constructeur
 		this.derniereVente = vente;
 		this.stock = stock;
 		this.qteDemandee = qteDemandee;
 	}
 	
 	
-	public Stock getStock() {
+	public double getStock() {
 		return this.stock;
 	}
 
 
-	public void setStock(Stock stock) {
+	public void setStock(double stock) {
 		this.stock = stock;
 	}
 
@@ -49,24 +49,15 @@ public class Distributeur implements Acteur,IDistributeur{
 	
 	public double getPrixMax(){
 		double prixTransfo;
-		int nb_choco = this.getStock().nbChoco();
-		prixTransfo = this.getDerniereVente().getPrix()*this.getDerniereVente().getQuantite();
-		double coeff = qteDemandee/nb_choco;
+		prixTransfo = this.getDerniereVente().getPrix();
+		double coeff = qteDemandee/this.stock;
 		double prix = coeff*prixTransfo;
 		return prix;
 	}
 	
 	public void notif(Vente vente){
 		this.setVente(vente);
-<<<<<<< HEAD
-		this.setStock(this.getStock()+vente.getQuantite());
-=======
-		List nouveauStock = new ArrayList<QuantiteChoco>();
-		for (int i=0; i<this.getStock().getStock().size(); i++){
-			
-		}
-		this.setStock(this.getStock().nbChoco()-vente.getQuantite());
->>>>>>> origin/master
+		this.setStock(this.stock-vente.getQuantite());
 	}
 	
 	public void next(){}
