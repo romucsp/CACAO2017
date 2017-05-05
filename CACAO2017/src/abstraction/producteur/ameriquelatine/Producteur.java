@@ -3,9 +3,9 @@ package abstraction.producteur.ameriquelatine;
 //26/04 Adrien
 
 import abstraction.fourni.Monde;
-import abstraction.fourni.v0.Constantes;
+import abstraction.fourni.Acteur;
 
-public class Producteur implements IProducteur {
+public class Producteur implements IProducteur, Acteur {
 	public String nom;
 	private GestionVentes ventes;
 	private Tresorerie treso;
