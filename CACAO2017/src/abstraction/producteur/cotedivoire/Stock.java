@@ -8,18 +8,18 @@ import abstraction.fourni.v0.Transformateur;
 
 public class Stock{
 	
-	private int stock; 
+	private double stock; 
 	
-	public Stock(int stock){ 
+	public Stock(double stock){ 
 		this.stock= stock;  
 	}
 
 	//Accesseur permettant de connaitre la quantité dans le stock à l'origine 
-	public int getStock(){ 
+	public double getStock(){ 
 		return this.stock; 
 	}
 	
-	public void setStock(){ 
+	public void addStock(double stock){ 
 		this.stock += stock; 
 	}
 }

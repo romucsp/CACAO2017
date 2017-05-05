@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 // by fcadre, comments by antoineroson
 
-public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
+public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	private int productionmoyenne; // Production moyenne de la cote d'ivoire
 	private ArrayList<Integer>  productions; //Liste des productions par périodes
 	private Stock stock;          // Represente notre stock 
@@ -42,9 +42,6 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 		// Récupére la dernière production sur la période
 	}
 
-	public int getQuantiteMiseEnVente() {
-		return this.stock.getStock(); 
-	}
 	// Méthode varitation random de la production
 	public void variationProduction(){
 		double variation = 0.10;  //Variation de +- 10% 
@@ -53,6 +50,7 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 		int prod_max = this.getProductionmoyenne() + (int)(this.getProductionmoyenne()*variation);
 		int prod = prod_min + (int)Math.random()*(prod_max - prod_min); // Production random entre prod_min et prod_max
 		productions.add(prod); // ajout dans la liste de production
+		this.stock.addStock(prod);
 	}
 	
 	//Accesseur Nom
@@ -61,20 +59,18 @@ public class ProductionCoteDIvoire implements Production, Acteur, IProducteur{
 	}
 
 	public double quantiteMiseEnvente() {   // correspond a la quantité mise en vente//
-		return this.getQuantiteProd()+this.stock.getStock(); 
+		return this.getQuantiteProd()+this.stock.getStock();  
 	}
 
 
 	public void notificationVente(double quantite, double coursActuel) {	// grace a la notification de vente on met a jour // 
 		this.tresorerie.setCa(quantite*coursActuel);                       // notre tresorerie et notre stock //
-		this.stock.setStock(this.getQuantiteMiseEnVente()-quantite);	
+		this.stock.addStock(-quantite);	
 	}
 	
 	//NEXT "Centre du programme -> Passage à la période suivante" 
 	
 	public void next() {
-		this.quantiteMiseEnvente(); 
-		this.notificationVente(this.quantiteMiseEnvente(), coursActuel);
-		
+		this.variationProduction();	
 	}
 }
