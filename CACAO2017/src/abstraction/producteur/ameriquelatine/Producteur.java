@@ -19,7 +19,7 @@ public class Producteur implements IProducteur {
 		this.recolte=new Recolte(0.8) ;
 		this.stock=new Stock(recolte) ;
 		this.ventes=new GestionVentes(stock) ;
-		stock.setGestionVente(ventes) ; // Pq? 
+		stock.setGestionVente(ventes) ; 
 	}
 	
 	public String getNom(){
