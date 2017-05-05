@@ -23,6 +23,7 @@ public class Producteur implements IProducteur, Acteur {
 		this.stock=new Stock(recolte) ;
 		this.ventes=new GestionVentes(stock) ;
 		stock.setGestionVente(ventes) ;
+		this.treso=new Tresorerie(stock);
 		//this.quantiteVendue=new Indicateur("Quantite de feves vendues de"+this.nom, this, qtevendue);
 	}
 	
@@ -47,7 +48,7 @@ public class Producteur implements IProducteur, Acteur {
 
 
 	public void notificationVente(double quantite, double coursActuel) {
-		this.treso.setTresorerie(this.treso.getTresorerie()+coursActuel*quantite);
+		this.treso.setTresorerie(this.treso.getTresorerie()+coursActuel*quantite-treso.coût());
 		this.setCoursActuel(coursActuel);
 		this.ventes.setQuantiteVendue(quantite);
 	}
