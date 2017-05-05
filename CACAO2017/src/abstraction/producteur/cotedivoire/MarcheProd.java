@@ -90,18 +90,18 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 		for (IProducteur p : Prod.keySet()){
 			qttEnVente += Prod.get(p);
 		}
-		setQuantiteAchetableGlob(qttEnVente);
+		setQuantiteAchetableGlob(qttEnVente);       //on définit la quantité globale en vente sur le marché.
 		int qttSouhaitee=0; 
 		for (transformateur t : Trans.keySet()){
 			qttSouhaitee+= Trans.get(t);
 		}
-		setQuantiteVoulueGlob(qttSouhaitee);
+		setQuantiteVoulueGlob(qttSouhaitee);      // On définit la quantite globale voulue sur le marché.
 		if (qttEnVente>=qttSouhaitee) {
 			for (transformateur t : Trans.keySet()){
 				t.notificationAchat(Trans.get(t),this.getCoursActuel());
 			}
 			for (IProducteur p : Prod.keySet()){
-				p.notificationVente(Prod.get(p)-this.quantiteVoulueGlob,this.getCoursActuel());
+				p.notificationVente(Prod.get(p)-((Prod.get(p)/qttEnVente)*qttSouhaitee),this.getCoursActuel());
 			}
 		}
 		else {
