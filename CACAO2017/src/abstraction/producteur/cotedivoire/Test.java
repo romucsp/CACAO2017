@@ -14,13 +14,15 @@ public class Test {
 		System.out.println(marche.getCoursActuel());
 		
 		ProductionCoteDIvoire prod= new ProductionCoteDIvoire(); 
-		prod.variationProduction();
+		System.out.println(prod.quantiteMiseEnvente());
 		System.out.println(prod.getProductions());
 		System.out.println(prod.getQuantiteProd());
 		prod.variationProduction();
+		System.out.println(prod.quantiteMiseEnvente());
 		System.out.println(prod.getProductions());
 		System.out.println(prod.getQuantiteProd());
 		prod.variationProduction();
+		System.out.println(prod.quantiteMiseEnvente());
 		System.out.println(prod.getProductions());
 		System.out.println(prod.getQuantiteProd());
 	}
