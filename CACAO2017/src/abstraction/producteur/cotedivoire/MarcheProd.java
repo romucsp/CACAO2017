@@ -105,9 +105,8 @@ public class MarcheProd implements Acteur{ // Kevin et Adrien.
 			}
 		}
 		else {
-			// a gérer avec les pourcentages
 			for (transformateur t : Trans.keySet()){
-				t.notificationAchat(12,this.getCoursActuel());
+				t.notificationAchat((Trans.get(t)/qttSouhaitee)*qttEnVente,this.getCoursActuel());
 			}
 			for (IProducteur p : Prod.keySet()){
 				p.notificationVente(Prod.get(p),this.getCoursActuel());
