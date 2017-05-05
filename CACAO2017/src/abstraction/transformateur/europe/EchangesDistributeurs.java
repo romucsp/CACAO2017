@@ -19,8 +19,7 @@ public class EchangesDistributeurs implements transformateur {
 		double stockchocolat=this.s.getstockchocolat();
 		if (stockchocolat<100){
 			return 10000;
-		}
-		else{
+		} else {
 			return prixmin+a;
 		}
 		// TODO Auto-generated method stub
