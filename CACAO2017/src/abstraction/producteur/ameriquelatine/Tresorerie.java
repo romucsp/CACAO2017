@@ -1,5 +1,7 @@
 package abstraction.producteur.ameriquelatine;
-//Modifié par lolotteisyoung
+//Modifié par lolotteisyoung 14/04/2017
+//Modifié par lolotteisyoung 24/04/2017
+//26/04 Adrien
 
 //import abstraction.fourni.Acteur;
 //import abstraction.fourni.Indicateur;
@@ -8,47 +10,32 @@ package abstraction.producteur.ameriquelatine;
 
 
 public class Tresorerie {
-	private double ca; //chiffres d'affaires de la periode
-	private double charges; // charges de production
+//private double ca; //chiffres d'affaires de la période
+	public final static int CHARGESPROD=100000;// ($) charges fixes (hors coût de stock)
+	public final static double COUTSTOCK=0.3;
+	private double resultat; // ne sert à rien pour l'instant
 	private double tresorerie; // argent en banque
-	private double resultat; // resultat = ca - charges
-	private double coursActuel; // prix $ par tonne du cacao de la periode
-	private Producteur producteur;
-	private double qtevendue;
-	
-	public Tresorerie(double charges, double tresorerie, double ca, double qtevendue){
-		this.ca= ca;
-		this.charges = charges ;
-		this.tresorerie = tresorerie ;	
-		this.resultat=ca-charges;
-	}
-	
-	 public double getCa(){
-		 return this.ca ;
-	 }
-	 public double getCharges(){
-		 return this.charges ;
-	 }
-	 public double getTresorerie(){
-		 return this.tresorerie ;
-	 }
+	private Stock stock;
 
-	public void setCa( int ca) {
-		
+//Méthode qui renvoie un chiffre d'affaire;
+//Méthode qui calcule les charges totales;
+//Méthode qui actualise la trésorerie;
+//qté vendue et cours actuel depuis producteur;
+	
+	public Tresorerie(Stock stock){
+		this.stock = stock ;
+		this.tresorerie = 10000 ;
 	}
-	public void setCharges(int charges){
-		this.charges = charges ;
+
+	public double getTresorerie(){
+		 return this.tresorerie ;
 	}
-	public void setTresorerie(int tresorerie){
+	
+	public double coût(){
+		return CHARGESPROD + stock.getInitial()*COUTSTOCK; //on ppaye le cout du stock le mois d'après !!!
+	}
+	
+	public void setTresorerie(double tresorerie){
 		this.tresorerie = tresorerie ;
 	}
-
-	public void setCoursActuel(double coursActuel){
-		this.coursActuel=coursActuel;
-	}
-	
-	public void next(){
-//		this.ca = 		
-	}
-	
 }
