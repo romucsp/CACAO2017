@@ -1,5 +1,5 @@
 package presentation;
-
+import abstraction.distributeur.europe.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class FenetrePrincipale extends JFrame {
 		super("Prime CACAO");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		Monde.LE_MONDE = new MondeV0(); 
+		Monde.LE_MONDE = new MondeV1(); 
 		Monde.LE_MONDE.peupler();
 		this.setLayout(new BorderLayout());
 

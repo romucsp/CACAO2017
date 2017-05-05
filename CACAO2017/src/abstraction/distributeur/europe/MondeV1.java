@@ -1,6 +1,11 @@
-// classe codée par Numa
-package abstraction.distributeur.europe;
 
+// classe codée par Numa/Walid
+package abstraction.distributeur.europe;
+import abstraction.producteur.ameriquelatine.*;
+import abstraction.producteur.cotedivoire.*;
+import abstraction.transformateur.usa.*;
+import abstraction.transformateur.usa.interfacemarche.*;
+import abstraction.distributeur.amerique.*;
 import java.util.ArrayList;
 import abstraction.fourni.Monde;
 import abstraction.transformateur.usa.TransformateurUsa;
@@ -11,35 +16,42 @@ public class MondeV1 extends Monde {
 	 *Création de l'instance Monde pour la version 1
 	 */
 	
-	private ArrayList<IDistributeur> distributeurs;
-	private ArrayList<ITransformateur> transformateurs;
-	private ArrayList<IProducteur> producteurs;
-	
+
 	public void peupler(){
+		Producteur pAmeriqueLatine = new Producteur();
+		//Producteur p2 = new Producteur();
 		
-		ArrayList<QuantiteChoco> stock = new ArrayList<QuantiteChoco>();
-		stock.add(new QuantiteChoco(new Chocolats("chocolat_noir"),13));
-		stock.add(new QuantiteChoco(new Chocolats("chocolat_blanc"),0));
-		stock.add(new QuantiteChoco(new Chocolats("chocolat_au_lait"),0));
-		Distributeur dEuropeen = new Distributeur(new Vente(70000000,1), new Stock(stock) , 13);
+		//this.ajouterActeur(p1);
+		//this.ajouterActeur(p2);
 		
-		DistributeurUS dUS = new DistribiteurUS(new Treso(5000000000,625000,new Demande(1)));
+		TransformateurUsa t1 = new TransformateurUsa();
+		//TransformateurUsa t2 = new TransformateurUsa();
 		
-		distributeurs.add(dEuropeen);
-		distributeurs.add(dUS);
+		this.ajouterActeur(t1);
+		//this.ajouterActeur(t2);
+		
+		MarcheProd Marche = new MarcheProd();
+		Marche.addProducteur(pAmeriqueLatine);
+		//Marche.addProducteur(p2);
+		Marche.addTransformateur(t1);
+		//Marche.addTransformateur(t2);
+		
+		this.ajouterActeur(Marche);
+		
+		Distributeur d1 = new Distributeur();
+		DistributeurUS d2 = new DistributeurUS();
+		
+		this.ajouterActeur(d1);
+		this.ajouterActeur(d2);
 		
 		
-		TransformateurUsa tUsa = new TransformateurUsa();
-		
-		transformateurs.add((ITransformateur) tUsa);
-		
-		Marche marche2 = new Marche(this.distributeurs, this.transformateurs);	/**Création du marché entre distributeur
-																				  *et transformateur*/
-		
-		
-		IProducteur p1 = new IProducteur();
+		Marche MarcheDT = new Marche();
+		MarcheDT.getDistrib().add(d1);
+		MarcheDT.getDistrib().add(d2);
+		MarcheDT.getTransfo().add(t1);
+		//MarcheDT.getTransfo().add(t2);
+		this.ajouterActeur(MarcheDT);
 	}
-	
 	
 
 }

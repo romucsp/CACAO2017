@@ -16,6 +16,11 @@ public class Distributeur implements Acteur,IDistributeur{
 		this.qteDemandee = qteDemandee;
 	}
 	
+	public Distributeur(){
+		this.derniereVente = new Vente(1000,1000);
+		this.stock = 1000;
+		this.qteDemandee = 100;
+	}
 	
 	public double getStock() {
 		return this.stock;
@@ -57,15 +62,7 @@ public class Distributeur implements Acteur,IDistributeur{
 	
 	public void notif(Vente vente){
 		this.setVente(vente);
-
-		this.setStock(this.getStock()+vente.getQuantite());
-		List nouveauStock = new ArrayList<QuantiteChoco>();
-		for (int i=0; i<this.getStock().getStock().size(); i++){
-			
-		}
-		this.setStock(this.getStock().nbChoco()-vente.getQuantite());
 		this.setStock(this.stock-vente.getQuantite());
-
 	}
 	
 	public void next(){}

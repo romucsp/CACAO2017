@@ -1,13 +1,13 @@
 package abstraction.distributeur.europe;
 
 import java.util.ArrayList;
-
+import abstraction.transformateur.usa.interfacemarche.*;
 import abstraction.fourni.Acteur;
 
-public class Marche {
+public class Marche implements Acteur{
 	
 	private ArrayList<IDistributeur> distributeur;
-	private ArrayList<ITransformateur> transformateur;
+	private ArrayList<transformateur> transformateur;
 	
 	double prixVenteMin=20;
 	double prixVenteMax=40;
@@ -17,11 +17,23 @@ public class Marche {
 	
 	double unite=1000;
 	
-	public Marche(ArrayList<IDistributeur> distributeur, ArrayList<ITransformateur> transformateur){
+	public Marche(ArrayList<IDistributeur> distributeur, ArrayList<transformateur> transformateur){
 		this.distributeur=distributeur;
 		this.transformateur=transformateur;
 	}
 	
+	public Marche(){
+		this.distributeur = new ArrayList<IDistributeur>();
+		this.transformateur = new ArrayList<transformateur>();
+	}
+	
+	public ArrayList<IDistributeur> getDistrib(){
+		return this.distributeur;
+	}
+	
+	public ArrayList<transformateur> getTransfo(){
+		return this.transformateur;
+	}
 	public boolean testFourchettePrix(boolean[] test_prix){
 		for (int i=0; i<test_prix.length; i++){
 			if ((test_prix[i]) == true){
@@ -47,7 +59,7 @@ public class Marche {
 		return indice_min;		
 	}
 	
-	public void Echanges(){
+	public void next(){
 		
 	
        // Définition des tests vérifiant si la boucle doit s'arrêter ou non 
@@ -57,7 +69,7 @@ public class Marche {
 		boolean[] test_t = new boolean[this.transformateur.size()];
 		boolean[] test_d = new boolean[this.transformateur.size()];
 		for (int i=0; i<this.transformateur.size(); i++){
-			test_t[i] = (transformateur.get(i).getPrixMin()>=prixVenteMin) &&	(transformateur.get(i).getPrixMin()<=prixVenteMax);
+			test_t[i] = (transformateur.get(i).getprixMin()>=prixVenteMin) &&	(transformateur.get(i).getprixMin()<=prixVenteMax);
 			test_d[i] = (distributeur.get(i).getPrixMax()>=prixAchatMin) &&  (distributeur.get(i).getPrixMax()<=prixAchatMax);
 		}
 
@@ -67,7 +79,7 @@ public class Marche {
 		 boolean testPrix= true;
 				
 		 for (int i=0; i<this.transformateur.size(); i++){
-			 if ( Math.max(distributeur.get(1).getPrixMax(), distributeur.get(2).getPrixMax()) < Math.max(transformateur.get(1).getPrixMin(), transformateur.get(2).getPrixMin())){
+			 if ( Math.max(distributeur.get(1).getPrixMax(), distributeur.get(2).getPrixMax()) < Math.max(transformateur.get(1).getprixMin(), transformateur.get(2).getprixMin())){
 				 testPrix = false;
 			 }
 		 }
@@ -87,7 +99,7 @@ public class Marche {
 			
 			// Définition du prix
 			
-			double prix = (distributeur.get(prioDistri).getPrixMax()+transformateur.get(prioTransfo).getPrixMin())/2;
+			double prix = (distributeur.get(prioDistri).getPrixMax()+transformateur.get(prioTransfo).getprixMin())/2;
 			
 			int autreDistri=Math.abs(prioDistri-1);
 			int autreTransfo=Math.abs(prioTransfo-1);
@@ -97,11 +109,18 @@ public class Marche {
 			
 			distributeur.get(prioDistri).notif(new Vente(prix, unite));
 			distributeur.get(autreDistri).notif(new Vente(prix, 0));
-			transformateur.get(prioTransfo).notif(new Vente(prix, unite));
-			transformateur.get(autreTransfo).notif(new Vente(prix, 0));
+			transformateur.get(prioTransfo).notificationAchat(unite, prix);
+			transformateur.get(autreTransfo).notificationAchat(0, prix);
 			
 			
 		}
+
+	@Override
+	public String getNom() {
+		return "Marche Distributeur / Transformateur";
+	}
+
+	
 		
 }
 
