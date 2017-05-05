@@ -10,7 +10,7 @@ public class Distributeur implements Acteur,IDistributeur{
 	private Stock stock;
 	private double qteDemandee;
 	
-	public Distributeur(Vente vente, Stock stock, double qteDemandee){
+	public Distributeur(Vente vente, Stock stock, double qteDemandee){ // penser à redocoder en enlevant les arguments du constructeur
 		this.derniereVente = vente;
 		this.stock = stock;
 		this.qteDemandee = qteDemandee;
