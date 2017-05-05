@@ -1,6 +1,8 @@
 package abstraction.producteur.cotedivoire;
 
 import abstraction.fourni.Acteur;
+import abstraction.fourni.Indicateur;
+import abstraction.fourni.Monde;
 import abstraction.producteur.ameriquelatine.IProducteur;
 
 
@@ -11,7 +13,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	private int  production; //Liste des productions par périodes
 	private Stock stock;          // Represente notre stock 
 	private Treso tresorerie;     // Représente notre trésorerie
-	
+	private Indicateur productionIndicateur;
 	//Cf marché
 	public int hashCode() {
 		return this.getNom().hashCode();
@@ -27,6 +29,8 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 		this.production = 0;
 		this.stock= new Stock(0);
 		this.tresorerie= new Treso();
+		this.productionIndicateur=new Indicateur("Production de Cote D'Ivoire",this,0.0);
+		Monde.LE_MONDE.ajouterIndicateur( this.productionIndicateur );
 	}
 	
 	//Accesseur Production moyenne
@@ -54,6 +58,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 		double prod = prod_min + (double)Math.random()*(prod_max - prod_min); // Production random entre prod_min et prod_max
 		production=(int)prod; // ajout dans la liste de production
 		this.stock.addStock(prod);
+		this.productionIndicateur.setValeur(this, prod);
 	}
 	
 	//Accesseur Nom
