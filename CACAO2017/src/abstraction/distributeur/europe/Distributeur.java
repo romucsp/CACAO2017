@@ -34,7 +34,7 @@ public class Distributeur implements Acteur,IDistributeur{
         
 	}
 	
-	public Indicateur getAchats(){
+	public Indicateur getIndicateurStock(){
 		return this.achats;
 	}
 	
