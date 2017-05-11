@@ -1,3 +1,4 @@
+
 // classe codée par Numa/Walid
 package abstraction.distributeur.europe;
 import abstraction.producteur.ameriquelatine.*;
@@ -20,24 +21,22 @@ public class MondeV1 extends Monde {
 
 	public void peupler(){
 		Producteur pAmeriqueLatine = new Producteur();
-		//Producteur p2 = new Producteur();
+		ProductionCoteDIvoire p2 = new ProductionCoteDIvoire();
 		
-		//this.ajouterActeur(p1);
-		//this.ajouterActeur(p2);
+		this.ajouterActeur(pAmeriqueLatine);
+		this.ajouterActeur(p2);
 		
 		TransformateurUsa t1 = new TransformateurUsa();
-		//TransformateurUsa t2 = new TransformateurUsa();
 		
 		Transformateur t2= new Transformateur();
 		
 		this.ajouterActeur(t1);
-		//this.ajouterActeur(t2);
-		
 		this.ajouterActeur(t2);
+		
 		
 		MarcheProd Marche = new MarcheProd();
 		Marche.addProducteur(pAmeriqueLatine);
-		//Marche.addProducteur(p2);
+		Marche.addProducteur(p2);
 		Marche.addTransformateur(t1);
 		Marche.addTransformateur(t2);
 		
