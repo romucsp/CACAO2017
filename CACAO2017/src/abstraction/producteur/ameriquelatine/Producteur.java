@@ -2,7 +2,7 @@
 package abstraction.producteur.ameriquelatine;
 //26/04 Adrien
 
-import abstraction.fourni.Monde;
+import abstraction.distributeur.europe.MondeV1;
 import abstraction.fourni.Acteur;
 import abstraction.fourni.Indicateur;
 
@@ -15,7 +15,8 @@ public class Producteur implements IProducteur, Acteur {
 	private Stock stock ;
 	private Recolte recolte ;
 	private Indicateur quantiteVendue;
-	private Indicateur solde;
+	private Indicateur solde; //Trésorerie
+
 	
 	public Producteur(){
 		this.nom="Producteur AmeriqueLatine" ;
@@ -24,10 +25,9 @@ public class Producteur implements IProducteur, Acteur {
 		this.ventes=new GestionVentes(stock) ;
 		stock.setGestionVente(ventes) ;
 		this.treso=new Tresorerie(stock);
-		this.quantiteVendue=new Indicateur("4_PROD_AMER_quantiteVendue", this,0.0) ;
-		Monde.LE_MONDE.ajouterIndicateur(this.quantiteVendue) ;
+		this.quantiteVendue=new Indicateur("4_PROD_AMER_quantiteVendue", this,0.0);
+		MondeV1.LE_MONDE.ajouterIndicateur(this.quantiteVendue) ;
 		this.solde=new Indicateur("4_PROD_AMER_solde", this,0.0) ;
-	//	Monde.LE_MONDE.ajouterIndicateur(this.treso);
 	}
 	
 	public String getNom(){
@@ -48,12 +48,14 @@ public class Producteur implements IProducteur, Acteur {
 	public double getQteVendue(){
 		return this.qtevendue;
 	}
-
+	
 
 	public void notificationVente(double quantite, double coursActuel) {
 		this.treso.setTresorerie(this.treso.getTresorerie()+coursActuel*quantite-treso.coût());
 		this.setCoursActuel(coursActuel);
 		this.ventes.setQuantiteVendue(quantite);
+		this.quantiteVendue.setValeur(this, this.qtevendue);
+		this.solde.setValeur(this, this.treso.getTresorerie());
 	}
 	
 	public double quantiteMiseEnvente() {
