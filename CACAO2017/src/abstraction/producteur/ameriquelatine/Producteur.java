@@ -14,8 +14,8 @@ public class Producteur implements IProducteur, Acteur {
 	private double qtevendue;
 	private Stock stock ;
 	private Recolte recolte ;
-//	private Indicateur quantiteVendue;
-	//private Indicateur solde;
+	private Indicateur quantiteVendue;
+	private Indicateur solde;
 	
 	public Producteur(){
 		this.nom="Producteur AmeriqueLatine" ;
@@ -24,7 +24,10 @@ public class Producteur implements IProducteur, Acteur {
 		this.ventes=new GestionVentes(stock) ;
 		stock.setGestionVente(ventes) ;
 		this.treso=new Tresorerie(stock);
-		//this.quantiteVendue=new Indicateur("Quantite de feves vendues de"+this.nom, this, qtevendue);
+		this.quantiteVendue=new Indicateur("4_PROD_AMER_quantiteVendue", this,0.0);
+		Monde.LE_MONDE.ajouterIndicateur(this.quantiteVendue) ;
+		this.solde=new Indicateur("4_PROD_AMER_solde", this,0.0);
+	//	Monde.LE_MONDE.ajouterIndicateur(this.treso);
 	}
 	
 	public String getNom(){
