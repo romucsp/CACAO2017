@@ -1,8 +1,5 @@
 package abstraction.producteur.cotedivoire;
 
-import java.util.ArrayList;
-import abstraction.fourni.v0.Producteur;
-import abstraction.fourni.v0.Transformateur; 
 
 // by fcadre 
 
@@ -19,8 +16,7 @@ public class Stock{
 		return this.stock; 
 	}
 	
-	//Accesseur permettant de mettre à jour le stock après un next
-	public void setStock(double stock){ 
-		this.stock += stock; //A modifier en ajoutant la notification de vente
+	public void addStock(double stock){ 
+		this.stock += stock; 
 	}
 }

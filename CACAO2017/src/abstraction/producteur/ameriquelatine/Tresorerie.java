@@ -13,7 +13,7 @@ public class Tresorerie {
 //private double ca; //chiffres d'affaires de la période
 	public final static int CHARGESPROD=100000;// ($) charges fixes (hors coût de stock)
 	public final static double COUTSTOCK=0.3;
-	private double resultat; // ne sert à rien pour l'instant
+	private double resultat; 
 	private double tresorerie; // argent en banque
 	private Stock stock;
 
@@ -32,7 +32,7 @@ public class Tresorerie {
 	}
 	
 	public double coût(){
-		return CHARGESPROD + stock.getInitial()*COUTSTOCK; //on ppaye le cout du stock le mois d'après !!!
+		return CHARGESPROD + stock.getInitial()*COUTSTOCK; //on paye le cout du stock le mois d'après !!!
 	}
 	
 	public void setTresorerie(double tresorerie){

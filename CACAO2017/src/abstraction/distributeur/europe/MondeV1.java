@@ -3,12 +3,14 @@
 package abstraction.distributeur.europe;
 import abstraction.producteur.ameriquelatine.*;
 import abstraction.producteur.cotedivoire.*;
+import abstraction.transformateur.europe.Transformateur;
 import abstraction.transformateur.usa.*;
 import abstraction.transformateur.usa.interfacemarche.*;
 import abstraction.distributeur.amerique.*;
 import java.util.ArrayList;
 import abstraction.fourni.Monde;
 import abstraction.transformateur.usa.TransformateurUsa;
+import abstraction.transformateur.europe.*;
 
 public class MondeV1 extends Monde {
 	
@@ -19,22 +21,26 @@ public class MondeV1 extends Monde {
 
 	public void peupler(){
 		Producteur pAmeriqueLatine = new Producteur();
-		//Producteur p2 = new Producteur();
+		ProductionCoteDIvoire p2 = new ProductionCoteDIvoire();
 		
 		//this.ajouterActeur(p1);
-		//this.ajouterActeur(p2);
+		this.ajouterActeur(p2);
 		
 		TransformateurUsa t1 = new TransformateurUsa();
 		//TransformateurUsa t2 = new TransformateurUsa();
 		
+		Transformateur t2= new Transformateur();
+		
 		this.ajouterActeur(t1);
 		//this.ajouterActeur(t2);
 		
+		this.ajouterActeur(t2);
+		
 		MarcheProd Marche = new MarcheProd();
 		Marche.addProducteur(pAmeriqueLatine);
-		//Marche.addProducteur(p2);
+		Marche.addProducteur(p2);
 		Marche.addTransformateur(t1);
-		//Marche.addTransformateur(t2);
+		Marche.addTransformateur(t2);
 		
 		this.ajouterActeur(Marche);
 		
@@ -49,7 +55,7 @@ public class MondeV1 extends Monde {
 		MarcheDT.getDistrib().add(d1);
 		MarcheDT.getDistrib().add(d2);
 		MarcheDT.getTransfo().add(t1);
-		//MarcheDT.getTransfo().add(t2);
+		MarcheDT.getTransfo().add(t2);
 		this.ajouterActeur(MarcheDT);
 	}
 	
