@@ -27,9 +27,9 @@ public class DistributeurUS implements IDistributeur{
 	
 	public void next(){
 		//System.out.println(Monde.LE_MONDE.getStep()+" "+this.getTreso().getDemande().demandeStep());
-		/*Appeler le marché ou un truc comme ça*/
+		
 		this.getTreso().setStock(this.getTreso().getStock()-this.getTreso().getDemande().getCommande());
-		double commande = this.getTreso().getDemande().demandeStep();
+		
 		
 	}
 
