@@ -2,17 +2,26 @@ package abstraction.distributeur.amerique;
 
 import abstraction.distributeur.europe.IDistributeur;
 import abstraction.distributeur.europe.Vente;
+import abstraction.fourni.Indicateur;
 import abstraction.fourni.Monde;
 
 public class DistributeurUS implements IDistributeur{
 	private Treso treso;
+	private Indicateur fonds;
+	private Indicateur stock;
 	
-	public DistributeurUS(Treso treso){
+	public DistributeurUS(Treso treso, Indicateur fonds, Indicateur stock){
 		this.treso=treso;
+		this.fonds=fonds;
+		this.stock=stock;
 	}
 	
 	public DistributeurUS(){
-		this.treso= new Treso(5000000000.0,625000,new Demande(625000.0));
+		this.treso= new Treso(5000000000.0,62.5,new Demande(62.5));
+		this.fonds=new Indicateur("Fonds du distributeurUS", this, 5000000000.0);
+		this.stock=new Indicateur("Stock du distributeurUS", this, 62.5);
+		Monde.LE_MONDE.ajouterIndicateur(this.fonds);
+		Monde.LE_MONDE.ajouterIndicateur(this.stock);
 	}
 	
 	
