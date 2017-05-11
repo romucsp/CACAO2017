@@ -21,8 +21,8 @@ public class Distributeur implements Acteur,IDistributeur{
 	
 	public Distributeur(){
 		this.nom = "Distributeur europe";
-		this.derniereVente = new Vente(1000,1000);
-		this.stock = 1000;
+		this.derniereVente = new Vente(10,1000);
+		this.stock = 10000;
 		this.qteDemandee = 100;
 		
 		
