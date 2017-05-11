@@ -24,9 +24,9 @@ public class Producteur implements IProducteur, Acteur {
 		this.ventes=new GestionVentes(stock) ;
 		stock.setGestionVente(ventes) ;
 		this.treso=new Tresorerie(stock);
-		this.quantiteVendue=new Indicateur("4_PROD_AMER_quantiteVendue", this,0.0);
+		this.quantiteVendue=new Indicateur("4_PROD_AMER_quantiteVendue", this,0.0) ;
 		Monde.LE_MONDE.ajouterIndicateur(this.quantiteVendue) ;
-		this.solde=new Indicateur("4_PROD_AMER_solde", this,0.0);
+		this.solde=new Indicateur("4_PROD_AMER_solde", this,0.0) ;
 	//	Monde.LE_MONDE.ajouterIndicateur(this.treso);
 	}
 	
