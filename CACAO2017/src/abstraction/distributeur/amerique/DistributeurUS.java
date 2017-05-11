@@ -23,8 +23,8 @@ public class DistributeurUS implements IDistributeur{
 
 		this.treso= new Treso(5000000000.0,625000,new Demande(625000.0));
 		
-		this.stock = new Indicateur("Stock de Distributeur US", this, 0.0);
-		this.fonds = new Indicateur("Fonds de Distributeur US", this, 1000000.0);
+		this.stock = new Indicateur("1_DISTR_US_stock", this, 0.0);
+		this.fonds = new Indicateur("1_DISTR_US_fonds", this, 1000000.0);
 		
     		Monde.LE_MONDE.ajouterIndicateur( this.stock );
     		Monde.LE_MONDE.ajouterIndicateur( this.fonds );
