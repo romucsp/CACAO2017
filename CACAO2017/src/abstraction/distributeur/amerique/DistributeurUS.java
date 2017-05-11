@@ -27,8 +27,16 @@ public class DistributeurUS implements IDistributeur{
 	
 	public void next(){
 		//System.out.println(Monde.LE_MONDE.getStep()+" "+this.getTreso().getDemande().demandeStep());
+		if (this.getTreso().getStock()>=this.getTreso().getDemande().getCommande()){
 		
-		this.getTreso().setStock(this.getTreso().getStock()-this.getTreso().getDemande().getCommande());
+			this.getTreso().setStock(this.getTreso().getStock()-this.getTreso().getDemande().getCommande());
+			this.getTreso().setFonds(this.getTreso().getFonds()+this.getTreso().getDemande().getCommande()*10*10000000);//On vend 10$ le kg et l'unité est 10ktonnes
+		}
+		else{
+			double vendu=this.getTreso().getStock();
+			this.getTreso().setStock(0);
+			this.getTreso().setFonds(this.getTreso().getFonds()+vendu*10*10000000);
+		}
 		
 		
 	}
