@@ -9,13 +9,14 @@ import abstraction.producteur.ameriquelatine.IProducteur;
 // by fcadre, comments by antoineroson
 
 public class ProductionCoteDIvoire implements Acteur, IProducteur{
-	public static final int  productionmoyenne = 165; // Production moyenne de la cote d'ivoire en tonnes
+	public static final int  productionmoyenne = 1650000; // Production moyenne de la cote d'ivoire en tonnes
 	private int  production; //Liste des productions par périodes
 	private Stock stock;          // Represente notre stock 
 	private Treso tresorerie;     // Représente notre trésorerie
 	private Indicateur productionIndicateur;
 	private Indicateur stockIndicateur;
 	private Indicateur tresoIndicateur;
+	private Indicateur vente;
 	//Cf marché
 	public int hashCode() {
 		return this.getNom().hashCode();
@@ -37,6 +38,9 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 		Monde.LE_MONDE.ajouterIndicateur(this.stockIndicateur);
 		this.tresoIndicateur = new Indicateur("6_PROD_COT_treso",this,0.0);
 		Monde.LE_MONDE.ajouterIndicateur(this.tresoIndicateur);
+		this.vente= new Indicateur("6_PROD_COT_vente",this,0.0);
+		Monde.LE_MONDE.ajouterIndicateur(this.vente);
+		
 	}
 	
 	//Accesseur Production moyenne
@@ -79,7 +83,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 
 	public void notificationVente(double quantite, double coursActuel) {	// grace a la notification de vente on met a jour // 
 		this.tresorerie.addCa(quantite*coursActuel);   // notre tresorerie et notre stock //
-		
+		this.vente.setValeur(this,quantite);
 		this.stock.addStock(-quantite);
 		
 	}
@@ -87,7 +91,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 	//NEXT "Centre du programme -> Passage à la période suivante" 
 	
 	public void next() {
-		this.variationProduction();	
+		this.variationProduction();
 		this.stockIndicateur.setValeur(this,this.stock.getStock());
 		this.tresoIndicateur.setValeur(this,this.tresorerie.getCa());
 	}
