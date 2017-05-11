@@ -23,18 +23,16 @@ public class MondeV1 extends Monde {
 		Producteur pAmeriqueLatine = new Producteur();
 		ProductionCoteDIvoire p2 = new ProductionCoteDIvoire();
 		
-		//this.ajouterActeur(p1);
+		this.ajouterActeur(pAmeriqueLatine);
 		this.ajouterActeur(p2);
 		
 		TransformateurUsa t1 = new TransformateurUsa();
-		//TransformateurUsa t2 = new TransformateurUsa();
 		
 		Transformateur t2= new Transformateur();
 		
 		this.ajouterActeur(t1);
-		//this.ajouterActeur(t2);
-		
 		this.ajouterActeur(t2);
+		
 		
 		MarcheProd Marche = new MarcheProd();
 		Marche.addProducteur(pAmeriqueLatine);
