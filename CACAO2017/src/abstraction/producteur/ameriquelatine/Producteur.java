@@ -16,6 +16,7 @@ public class Producteur implements IProducteur, Acteur {
 	private Recolte recolte ;
 	private Indicateur quantiteVendue;
 	private Indicateur solde; //Trésorerie
+	private Indicateur stockind ;
 
 	
 	public Producteur(){
@@ -29,6 +30,8 @@ public class Producteur implements IProducteur, Acteur {
 		MondeV1.LE_MONDE.ajouterIndicateur(this.quantiteVendue) ;
 		this.solde=new Indicateur("4_PROD_AMER_solde", this,0.0) ;
 		MondeV1.LE_MONDE.ajouterIndicateur(this.solde);
+		this.stockind=new Indicateur("4_PROD_AMER_stock", this,0.0) ;
+		MondeV1.LE_MONDE.ajouterIndicateur(this.stockind);
 	}
 	
 	public String getNom(){
@@ -57,6 +60,7 @@ public class Producteur implements IProducteur, Acteur {
 		this.ventes.setQuantiteVendue(quantite);
 		this.quantiteVendue.setValeur(this, quantite);
 		this.solde.setValeur(this, this.treso.getTresorerie());
+		this.stockind.setValeur(this, this.stock.getInitial());
 	}
 	
 	public double quantiteMiseEnvente() {
