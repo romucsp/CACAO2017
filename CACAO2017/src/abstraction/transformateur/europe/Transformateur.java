@@ -1,17 +1,33 @@
 package abstraction.transformateur.europe;
+import abstraction.fourni.Acteur;
+import abstraction.fourni.Indicateur;
+import abstraction.fourni.Monde;
 import abstraction.transformateur.usa.interfacemarche.transformateur;;
 
-public class Transformateur implements transformateur  {
+public class Transformateur implements transformateur, Acteur  {
 
 	private String nom;
 	private Stock s;
 	private Tresorerie compte;
 	private double prixmin=4000;
 	
-	public Transformateur (Stock s){
+	private Indicateur stockchocolat;
+	private Indicateur tresorerie;
+	
+	
+	
+	public Transformateur (Stock s, Tresorerie compte){
 		this.s=s;
+		this.compte=compte;
+		this.stockchocolat=new Indicateur("stockchocolat",this,this.s.getstockchocolat());
+		this.tresorerie=new Indicateur("tresorerie",this,this.compte.getCompte());
+		Monde.LE_MONDE.ajouterIndicateur( this.stockchocolat );
+		Monde.LE_MONDE.ajouterIndicateur( this.tresorerie );
 	}
 	
+	public Transformateur(){
+		this(new Stock(),new Tresorerie());
+	}
 	
 	public double getprixMin() {
 		double a = 1000*Math.random();
@@ -41,7 +57,6 @@ public class Transformateur implements transformateur  {
 		return "Transformateur "+this.nom;
 	}
 	
-
 	public Stock getStock(){
 		return this.s;
 	}
@@ -53,11 +68,18 @@ public class Transformateur implements transformateur  {
 		
 	}
 	
+	public void Transformation(){
+		this.s.setstockchocolat(this.s.getstockcacao()*0.6);
+		this.s.setstockcacao(0);
+	}
+	
 	public void notificationAchat(double prix, double quantite){
 		this.s.setstockcacao(this.s.getstockcacao()+quantite);
 		double achat = prix*quantite;
 		this.compte.retraitAchat(achat);
 	}
 		
-	
+	public void next(){
+		Transformation();
+	}
 }
