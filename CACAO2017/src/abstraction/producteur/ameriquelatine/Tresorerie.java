@@ -11,8 +11,9 @@ package abstraction.producteur.ameriquelatine;
 
 public class Tresorerie {
 //private double ca; //chiffres d'affaires de la période
-	public final static int CHARGESPROD=20000000;// ($) charges fixes (hors coût de stock)
-	public final static double COUTSTOCK=2000;
+
+	public final static int CHARGESPROD=10000000;// ($) charges fixes (hors coût de stock)
+	public final static double COUTSTOCK=100;
 	private double resultat; 
 	private double tresorerie; // argent en banque
 	private Stock stock;
