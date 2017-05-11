@@ -29,7 +29,7 @@ public class ProductionCoteDIvoire implements Acteur, IProducteur{
 		this.production = 0;
 		this.stock= new Stock(0);
 		this.tresorerie= new Treso();
-		this.productionIndicateur=new Indicateur("Production de Cote D'Ivoire",this,0.0);
+		this.productionIndicateur=new Indicateur("6_PROD_COT_production",this,0.0);
 		Monde.LE_MONDE.ajouterIndicateur( this.productionIndicateur );
 	}
 	
