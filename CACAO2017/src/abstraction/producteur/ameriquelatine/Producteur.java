@@ -15,11 +15,8 @@ public class Producteur implements IProducteur, Acteur {
 	private Stock stock ;
 	private Recolte recolte ;
 	private Indicateur quantiteVendue;
-<<<<<<< HEAD
 	private Indicateur solde; //Trésorerie
-=======
-	private Indicateur solde;
->>>>>>> origin/master
+
 	
 	public Producteur(){
 		this.nom="Producteur AmeriqueLatine" ;
@@ -28,15 +25,9 @@ public class Producteur implements IProducteur, Acteur {
 		this.ventes=new GestionVentes(stock) ;
 		stock.setGestionVente(ventes) ;
 		this.treso=new Tresorerie(stock);
-<<<<<<< HEAD
-		this.quantiteVendue=new Indicateur("Quantite de feves vendues de"+this.nom, this, 0.0);
-		this.solde=new Indicateur("Quantite de feves vendues de"+this.nom, this, 0.0);
-=======
 		this.quantiteVendue=new Indicateur("4_PROD_AMER_quantiteVendue", this,0.0);
-		Monde.LE_MONDE.ajouterIndicateur(this.quantiteVendue) ;
-		this.solde=new Indicateur("4_PROD_AMER_solde", this,0.0);
-	//	Monde.LE_MONDE.ajouterIndicateur(this.treso);
->>>>>>> origin/master
+		MondeV1.LE_MONDE.ajouterIndicateur(this.quantiteVendue) ;
+		this.solde=new Indicateur("4_PROD_AMER_solde", this,0.0) ;
 	}
 	
 	public String getNom(){
