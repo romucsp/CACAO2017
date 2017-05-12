@@ -12,16 +12,16 @@ public class Treso {
 	private double coutmaindoeuvre; 
 	private double benefice;  
 	
-	public Treso(Stock stock, double ca, double cp, double cach, double cmdo, double benef){ 
-		this.stock = stock; 
-		this.ca = ca; 
-		this.coutdeprod = cp; 
-		this.coutacheminement = cach;
-		this.coutmaindoeuvre = cmdo; 
-		this.benefice = benef; 
+	public Treso(){
+		this.stock = new Stock (0); 
+		this.ca = 0; 
+		this.coutdeprod = 0; 
+		this.coutacheminement = 0;
+		this.coutmaindoeuvre = 0; 
+		this.benefice = 0; 
 	}
-	public int getStock(){ 
-		return this.getStock(); 
+	public double getStock(){ 
+		return this.stock.getStock(); 
 	}
 	
 	public double getCa(){ 
@@ -39,23 +39,9 @@ public class Treso {
 	public double getBenefice(){ 
 		return this.benefice;  
 	}
-	public void setStock(Stock stock) {
-		this.stock = stock;
-	}
-	public void setCa(double ca) {
-		this.ca = ca;
-	}
-	public void setCoutdeprod(double coutdeprod) {
-		this.coutdeprod = coutdeprod;
-	}
-	public void setCoutacheminement(double coutacheminement) {
-		this.coutacheminement = coutacheminement;
-	}
-	public void setCoutmaindoeuvre(double coutmaindoeuvre) {
-		this.coutmaindoeuvre = coutmaindoeuvre;
-	}
-	public void setBenefice(double benefice) {
-		this.benefice = this.getCa() - this.getCoutacheminement() - this.getCoutmaindoeuvre() - this.getCoutdeprod();
+
+	public void addCa(double a){
+		this.ca+=a;
 	}
 	
 }
