@@ -3,20 +3,27 @@
 package abstraction.distributeur.europe;
 import abstraction.fourni.v0.*;
 import abstraction.fourni.*;
+import java.util.ArrayList;
+import java.util.List;
 public class Distributeur implements Acteur,IDistributeur{
 	private Vente derniereVente; // derniere vente effectuee sur le marche
 	private double stock;
 	private double qteDemandee;
 	
-	public Distributeur(Vente vente, double stock, double qteDemandee){
+	public Distributeur(Vente vente, double stock, double qteDemandee){ // penser à redocoder en enlevant les arguments du constructeur
 		this.derniereVente = vente;
 		this.stock = stock;
 		this.qteDemandee = qteDemandee;
 	}
 	
+	public Distributeur(){
+		this.derniereVente = new Vente(1000,1000);
+		this.stock = 1000;
+		this.qteDemandee = 100;
+	}
 	
 	public double getStock() {
-		return stock;
+		return this.stock;
 	}
 
 
@@ -47,15 +54,15 @@ public class Distributeur implements Acteur,IDistributeur{
 	
 	public double getPrixMax(){
 		double prixTransfo;
-		prixTransfo = derniereVente.getPrix()*derniereVente.getQuantite();
-		double coeff = qteDemandee/stock;
+		prixTransfo = this.getDerniereVente().getPrix();
+		double coeff = qteDemandee/this.stock;
 		double prix = coeff*prixTransfo;
 		return prix;
 	}
 	
 	public void notif(Vente vente){
 		this.setVente(vente);
-		this.setStock(this.getStock()-vente.getQuantite());
+		this.setStock(this.stock-vente.getQuantite());
 	}
 	
 	public void next(){}

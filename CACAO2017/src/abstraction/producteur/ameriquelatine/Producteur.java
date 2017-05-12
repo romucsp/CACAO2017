@@ -3,9 +3,10 @@ package abstraction.producteur.ameriquelatine;
 //26/04 Adrien
 
 import abstraction.fourni.Monde;
-import abstraction.fourni.v0.Constantes;
+import abstraction.fourni.Acteur;
+import abstraction.fourni.Indicateur;
 
-public class Producteur implements IProducteur {
+public class Producteur implements IProducteur, Acteur {
 	public String nom;
 	private GestionVentes ventes;
 	private Tresorerie treso;
@@ -13,13 +14,17 @@ public class Producteur implements IProducteur {
 	private double qtevendue;
 	private Stock stock ;
 	private Recolte recolte ;
+//	private Indicateur quantiteVendue;
+	//private Indicateur solde;
 	
 	public Producteur(){
 		this.nom="Producteur AmeriqueLatine" ;
 		this.recolte=new Recolte(0.8) ;
 		this.stock=new Stock(recolte) ;
 		this.ventes=new GestionVentes(stock) ;
-		stock.setGestionVente(ventes) ; // Pq? 
+		stock.setGestionVente(ventes) ;
+		this.treso=new Tresorerie(stock);
+		//this.quantiteVendue=new Indicateur("Quantite de feves vendues de"+this.nom, this, qtevendue);
 	}
 	
 	public String getNom(){
@@ -43,7 +48,7 @@ public class Producteur implements IProducteur {
 
 
 	public void notificationVente(double quantite, double coursActuel) {
-		this.treso.setTresorerie(this.treso.getTresorerie()+coursActuel*quantite);
+		this.treso.setTresorerie(this.treso.getTresorerie()+coursActuel*quantite-treso.coût());
 		this.setCoursActuel(coursActuel);
 		this.ventes.setQuantiteVendue(quantite);
 	}
